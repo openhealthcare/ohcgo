@@ -3,6 +3,7 @@
 html {
 	font: 400 1em/1.5 'Open Sans';
 	color: #444;
+	-webkit-text-size-adjust: none;
 }
 
 img {
