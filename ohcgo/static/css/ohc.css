@@ -7,6 +7,43 @@ html {
 	    -ms-text-size-adjust: 100%;
 }
 
+a {
+	color: #5e5ed0;
+}
+
+a:hover,
+a:active,
+a:focus {
+	background: rgba(60,60,150,.3333);
+}
+
+p a:hover,
+h1 a:hover,
+h2 a:hover,
+h3 a:hover,
+h4 a:hover,
+h5 a:hover,
+h6 a:hover,
+p a:active,
+h1 a:active,
+h2 a:active,
+h3 a:active,
+h4 a:active,
+h5 a:active,
+h6 a:active,
+p a:focus,
+h1 a:focus,
+h2 a:focus,
+h3 a:focus,
+h4 a:focus,
+h5 a:focus,
+h6 a:focus {
+	margin-left:  -.1em;
+	margin-right: -.1em;
+	padding-left:  .1em;
+	padding-right: .1em;
+}
+
 img {
 	border: 0;
 	display: block;
