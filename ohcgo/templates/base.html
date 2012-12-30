@@ -30,7 +30,7 @@
 		<meta name="HandheldFriendly" content="True">
 		<meta name="MobileOptimized" content="320">
 		<meta name="viewport" content="width=device-width">
-		<link rel="stylesheet" href="inc/css/ohc.css"/>
+		<link rel="stylesheet" href="/inc/css/ohc.css"/>
 	</head>
 	<body class="home">
 		<!-- div class="twitter">
@@ -76,93 +76,12 @@
 		</header>
 		<div class="content">
 			<div class="contentWrap">
-				<div class="contentItem intro">
-					<div class="contentItemWrap">
-						<p class="firstChild">
-							Open Health Care UK is a <a href="consultancy">team</a>, a series of <a href="projects">projects</a>, and a foundation with the purposing of using <a href="http://en.wikipedia.org/wiki/Open_source_software" target="blank">open source software</a> and expertise to solve problems faced by patients, doctors and healthcare professionals.
-						</p>
-						<!--p>
-							We organise the <a href="hack-day">NHS Hack Day</a> as part of our work to encourage and promote the efforts of the open source IT community in solving general and specific problems, produce and maintain products and projects that address these problems, and offer consultancy to the Department of Health and other bodies interested in tailoring our expertise and insight to specific requirements.
-						</p-->
-					</div>
-				</div>
-				<div class="contentItem featured">
-					<div class="contentItemWrap">
-						<h2>NHS Hack Day 3: Oxford</h2>
-						<img alt="NHS Hack Day logo" src="inc/img/hack-day.png" />
-						<p>The 3rd NHS Hack Day takes place in Tingewick Hall, John Radcliffe Hospital, Oxford, on the 26th and 27th of January 2013. Be there!</p>
-					</div>
-				</div>
-				<div class="contentItem apps">
-					<div class="contentItemWrap">
-						<h2>
-							Projects &#38; products
-						</h2>
-						<article>
-							<h3>
-								NICE Guideline App for Android and iPhone
-							</h3>
-							<p>
-								This app provides a fast and convenient means to access, download, and view NICE guidelines.
-							</p>
-						</article>
-						<article>
-							<h3>
-								Prescribing analytics
-							</h3>
-							<p>
-								We’re collaborating with Mastodon C and Ben Goldacre  to draw attention to unwarranted prescribing variation. Naturally we’ve made an API.
-							</p>
-						</article>
-					</div>
-				</div>
+				{% block content %}
+				{% endblock %}
 			</div>
 		</div>
-		<div class="blog">
-			<div class="contentWrap">
-				<h2>
-					From the blog
-				</h2>
-				<div class="contentItem">
-					<article class="firstUnit">
-						<div class="contentItemWrap">
-							<div class="colophon">
-								<h3>
-									Open data, peer production, and prescribing analytics
-								</h3>
-								<p>
-									Last week saw the launch of prescribinganalytics.com (covered in the economist and elsewhere). At present it’s ‘just’ a nice data visualisation of some interesting open data that show the NHS could potentially save millions from it’s drug budget.
-								</p>
-							</div>
-						</div>
-					</article>
-					<article>
-						<div class="contentItemWrap">
-							<div class="colophon">
-								<h3>
-									Why trusts should get behind NHS Hack Days and back ‘geeks who love the NHS’
-								</h3>
-								<p>
-									NHS Hack Days demonstrate the value of a modern approach to NHS IT procurement and show the way forwards for competitive trusts. The first ever NHS Hack Day took place in London recently.
-								</p>
-							</div>
-						</div>
-					</article>
-					<article class="lastUnit">
-						<div class="contentItemWrap">
-							<div class="colophon">
-								<h3>
-									Our response to the NHS Information Strategy
-								</h3>
-								<p>
-									Last month saw the publication of the eagerly awaited NHS information strategy. With the ‘Liberating the NHS’ reforms now taking shape on the ground, the document may well be the final word on IT from the Department of Health.
-								</p>
-							</div>
-						</div>
-					</article>
-				</div>
-			</div>
-		</div>
+		{% block content_after %}
+		{% endblock %}
 		<div class="footer">
 			<div class="contentWrap">
 				<p>Get in touch! <br/><a href="mailto:carl.reynolds@openhealthcare.org.uk">carl.reynolds@openhealthcare.org.uk</a></p>
