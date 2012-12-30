@@ -8,6 +8,12 @@ class Product(models.Model):
     description    = models.TextField()
     image_location = models.CharField(max_length=200)
     tracker        = models.URLField(blank=True, null=True)
+
+    # Links, instructions etc on how to get and use the app
+    # get_the_app    = models.TextField()
+
+    # eg 'Would you like to see an iPhone version of this app?'
+    # question       = models.CharField(max_length=200)
     
 
     def __unicode__(self):
