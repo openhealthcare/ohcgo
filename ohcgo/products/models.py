@@ -8,7 +8,7 @@ class Product(models.Model):
     description    = models.TextField()
     image_location = models.CharField(max_length=200)
     tracker        = models.URLField(blank=True, null=True)
-    featured       = models.BooleanField(default=False)
+    
 
     def __unicode__(self):
         return self.name
