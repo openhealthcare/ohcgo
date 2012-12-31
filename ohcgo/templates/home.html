@@ -25,7 +25,7 @@
 		</h2>
 		<article>
 			<h3>
-				NICE Guideline App for Android and iPhone
+				NICE Guideline App for Android and iPhoneb
 			</h3>
 			<p>
 				This app provides a fast and convenient means to access, download, and view NICE guidelines.
@@ -39,6 +39,17 @@
 				We’re collaborating with Mastodon C and Ben Goldacre  to draw attention to unwarranted prescribing variation. Naturally we’ve made an API.
 			</p>
 		</article>
+                <!-- Demonstrative of extra context now being passed -->
+                {% for tool in products %}
+                <article>
+                        <h3>
+                                {{tool.name}}
+                        </h3>
+                        <p>
+                                {{tool.description}}
+                        </p>
+                </article>
+                {% endfor %}
 	</div>
 </div>
 {% endblock %}
