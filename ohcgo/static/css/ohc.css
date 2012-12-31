@@ -17,8 +17,10 @@ a {
 
 a:hover,
 a:active,
-a:focus {
+a:focus,
+.link {
 	background: rgba(60,60,150,.3333);
+	cursor: pointer;
 }
 
 p a:hover,
@@ -273,19 +275,22 @@ nav a {
 		font-size: 1.5em;
 	}
 
-	body.post article {
+	body.post article,
+	body.tool article {
 		margin-left: 33.3333%;
 		padding-left: 1em;
 	}
 
-	body.post article img {
+	body.post article img,
+	body.tool article img {
 		position: absolute;
 		left: -50%;
 		max-height: none;
 		max-width: 50%;
 	}
 
-	body.post article .colophon {
+	body.post article .colophon,
+	body.tool article .colophon {
 		position: absolute;
 		left: -50%;
 		text-align: right;

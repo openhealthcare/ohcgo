@@ -2,47 +2,54 @@
 
 {% load markup %}
 
-{% block page_type %}product{% endblock %}
+{% block page_type %}tool{% endblock %}
 
 {% block content %}
-<h1>
-	{{object.name}}
-</h1>
-{% if object.image_location %}
-<img alt="{object.name} imagery" class="hero" src="{{object.image_location}}"/>
-{% endif %}
-<div class="description">
-{{object.description|markdown}}
-</div>
-{% if object.get_the_app or object.question or object.tracker %}
-<div class="app_meta">
-	{% if object.get_the_app %}
-	<h2>
-		Get {{object.name}}
-	</h2>
-	{{object.get_the_app}}
+<article>
+	<h1>
+		{{object.name}}
+	</h1>
+	<p class="colophon">
+		<span class="article_type">
+			Tool
+		</span>
+	</p>
+	{% if object.image_location %}
+	<img alt="{object.name} imagery" class="hero" src="{{object.image_location}}"/>
 	{% endif %}
-	{% if object.question or object.tracker %}
-	<h2>
-		Feedback
-	</h2>
-	<ul class="feedback">
-		{% if object.tracker %}
-		<li class="tracker">
-			<a href="{{object.tracker}}" target="_blank">
-				Report an issue
-			</a>
-		</li>
+	<div class="description">
+	{{object.description|markdown}}
+	</div>
+	{% if object.get_the_app or object.question or object.tracker %}
+	<div class="app_meta">
+		{% if object.get_the_app %}
+		<h2>
+			Get {{object.name}}
+		</h2>
+		{{object.get_the_app}}
 		{% endif %}
-		{% if object.question %}
-		<li class="question">
-			<a data-action="respondToQuestion">
-				{{object.question}}
-			</a>
-		</li>
+		{% if object.question or object.tracker %}
+		<h2>
+			Feedback
+		</h2>
+		<ul class="feedback">
+			{% if object.tracker %}
+			<li class="tracker">
+				<a href="{{object.tracker}}" target="_blank">
+					Report an issue
+				</a>
+			</li>
+			{% endif %}
+			{% if object.question %}
+			<li class="question">
+				<a data-action="respondToQuestion">
+					{{object.question}}
+				</a>
+			</li>
+			{% endif %}
+		</ul>
 		{% endif %}
-	</ul>
-	{% endif %}
-</div>
+	</div>
+</article>
 {% endif %}
 {% endblock %}
