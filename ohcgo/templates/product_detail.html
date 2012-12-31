@@ -1,9 +1,48 @@
 {% extends 'base.html' %}
+
 {% load markup %}
-{{object.name}}
-<br/>
+
+{% block page_type %}product{% endblock %}
+
+{% block content %}
+<h1>
+	{{object.name}}
+</h1>
+{% if object.image_location %}
+<img alt="{object.name} imagery" class="hero" src="{{object.image_location}}"/>
+{% endif %}
+<div class="description">
 {{object.description|markdown}}
-<br />
-{{object.image_location}}
-<br />
-{{object.tracker}}
+</div>
+{% if object.get_the_app or object.question or object.tracker %}
+<div class="app_meta">
+	{% if object.get_the_app %}
+	<h2>
+		Get {{object.name}}
+	</h2>
+	{{object.get_the_app}}
+	{% endif %}
+	{% if object.question or object.tracker %}
+	<h2>
+		Feedback
+	</h2>
+	<ul class="feedback">
+		{% if object.tracker %}
+		<li class="tracker">
+			<a href="{{object.tracker}}" target="_blank">
+				Report an issue
+			</a>
+		</li>
+		{% endif %}
+		{% if object.question %}
+		<li class="question">
+			<a data-action="respondToQuestion">
+				{{object.question}}
+			</a>
+		</li>
+		{% endif %}
+	</ul>
+	{% endif %}
+</div>
+{% endif %}
+{% endblock %}
