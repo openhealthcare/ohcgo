@@ -7,6 +7,10 @@ html {
 	    -ms-text-size-adjust: 100%;
 }
 
+.bffs {
+	white-space: nowrap;
+}
+
 a {
 	color: #5e5ed0;
 }
