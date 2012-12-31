@@ -11,7 +11,7 @@ from ohcgo.products.models import Product
 urlpatterns = patterns(
     '',
     url(r'^$', TemplateView.as_view(template_name='home.html'), name='home'),
-    url(r'tools^$', TemplateView.as_view(template_name='tools.html'),
+    url(r'^tools$', TemplateView.as_view(template_name='tools.html'),
         name='products'),
     url(r'^hack-days$', TemplateView.as_view(template_name='hackdays.html'), name='hackdays'),
     url(r'^consultancy$', TemplateView.as_view(template_name='consultancy.html'),
