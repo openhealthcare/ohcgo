@@ -11,14 +11,14 @@ from ohcgo.products.models import Product
 urlpatterns = patterns(
     '',
     url(r'^$', TemplateView.as_view(template_name='home.html'), name='home'),
-    url(r'projects-and-products^$', TemplateView.as_view(template_name='products.html'),
+    url(r'tools^$', TemplateView.as_view(template_name='tools.html'),
         name='products'),
     url(r'^hack-days$', TemplateView.as_view(template_name='hackdays.html'), name='hackdays'),
     url(r'^consultancy$', TemplateView.as_view(template_name='consultancy.html'),
         name='consultancy'),
 
-    url(r'^product/(?P<pk>\d+)/?$', DetailView.as_view(model=Product,
-                                                       template_name="product_detail.html")),
+    url(r'^tool/(?P<pk>\d+)/?$', DetailView.as_view(model=Product,
+                                                       template_name="tool_detail.html")),
     # Examples:
     # url(r'^$', 'ohcgo.views.home', name='home'),
     # url(r'^ohcgo/', include('ohcgo.foo.urls')),
