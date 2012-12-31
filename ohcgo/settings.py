@@ -1,9 +1,12 @@
 # Django settings for ohcgo project.
 import dj_database_url
-#import ffs
 
-#ROOT = ffs.Path(__file__).parent
-ROOT = "C:/Users/Barney/Documents/GitHub/ohcgo"
+#import ffs
+#ROOT = ffs.Path(__file__).paren
+import os
+ROOT = os.path.abspath(os.path.dirname(__file__))
+
+# ROOT = "C:/Users/Barney/Documents/GitHub/ohcgo"
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -61,6 +64,7 @@ STATIC_URL = '/inc/'
 # Additional locations of static files
 STATICFILES_DIRS = (
 #    str(ROOT / 'static'),
+    os.path.join(ROOT, 'static'),
     "C:/Users/Barney/Documents/GitHub/ohcgo/ohcgo/static",
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
@@ -102,6 +106,7 @@ WSGI_APPLICATION = 'ohcgo.wsgi.application'
 
 TEMPLATE_DIRS = (
 #    ROOT / 'templates'
+    os.path.join(ROOT, 'templates'),
     "C:/Users/Barney/Documents/GitHub/ohcgo/ohcgo/templates"
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
