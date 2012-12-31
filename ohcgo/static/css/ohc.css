@@ -116,6 +116,13 @@ header {
 	color: #1d1d1b;
 }
 
+header h1 img {
+	border: .125em solid;
+	display: inline-block;
+	height: 1.3333em;
+	vertical-align: baseline;
+}
+
 header .colophon {
 	padding-right: 1em;
 }
