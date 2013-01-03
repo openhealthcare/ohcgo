@@ -62,7 +62,7 @@ table {
     border-spacing: 0;
 }
 
-html, 
+html,
 body {
 	background: #fefefe;
 	margin: 0;
@@ -123,10 +123,14 @@ header {
 }
 
 header h1 img {
-	border: .125em solid;
+	border: .125em solid black;
 	display: inline-block;
 	height: 1.3333em;
 	vertical-align: baseline;
+}
+
+header h1 a:hover{
+    background: transparent;
 }
 
 header .colophon {
@@ -145,7 +149,7 @@ header .colophon {
 }
 
 h1 {
-	text-transform: uppercase; 
+	text-transform: uppercase;
 }
 
 nav {
@@ -231,13 +235,13 @@ nav a {
 		font-weight: 600;
 	}
 
-	/* Extrapolations fom Stubbornella's OOCSS grids module 
+	/* Extrapolations fom Stubbornella's OOCSS grids module
 	 * https://github.com/stubbornella/oocss/blob/master/core/grid/grids.css
 	 */
 
-	nav ul, 
+	nav ul,
 	nav li.lastUnit {
-		overflow: hidden; 
+		overflow: hidden;
 		*overflow: visible;
 		*zoom: 1;
 	}
@@ -251,8 +255,8 @@ nav a {
 	}
 
 	nav li.lastUnit {
-		float: none; 
-		width: auto; 
+		float: none;
+		width: auto;
 		_position: relative;
 		_left: -3px;
 		_margin-right: -3px;
@@ -315,13 +319,13 @@ nav a {
 		padding-top: 3em;
 	}
 
-	header, 
+	header,
 	nav,
 	body.home .content,
 	body.home .content .apps,
 	body.home .blog,
 	body.home .blog .lastUnit {
-		overflow: hidden; 
+		overflow: hidden;
 		*overflow: visible;
 		*zoom: 1;
 	}
@@ -334,11 +338,11 @@ nav a {
 		width: 33.33333%;
 	}
 
-	nav, 
+	nav,
 	body.home .content .apps,
 	body.home .blog .lastUnit {
-		float: none; 
-		width: auto; 
+		float: none;
+		width: auto;
 		_position: relative;
 		_left: -3px;
 		_margin-right: -3px;

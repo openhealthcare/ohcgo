@@ -43,14 +43,14 @@
 			<div class="contentWrap">
 				<div class="colophon">
 					<h1>
-						<img alt src="/inc/img/ohc-trans.png"/>
+                                          <a href="{% url home %}"><img alt src="/inc/img/ohc-trans.png"/></a>
 						<span class="text">
 							Open Health <span class="bffs">Care UK</span>
 						</span>
 					</h1>
 					<p class="strapline">
-						Open-source IT solutions for patients and healthcare professionals
-					</p>
+                                          Making great health care less hard.
+   		                        </p>
 				</div>
 				<nav>
 					<ul>
@@ -93,7 +93,11 @@
 		{% endblock %}
 		<div class="footer">
 			<div class="contentWrap">
-				<p>Get in touch! <br/><a href="mailto:hello@openhealthcare.org.uk">hello@openhealthcare.org.uk</a></p>
+				<p>Get in touch! <br/><a href="mailto:hello@openhealthcare.org.uk">hello@openhealthcare.org.uk</a>
+                                </p>
+                                <p>
+                                  <a href="{% url about %}">About</a>
+                                </p>
 			</div>
 		</div>
 	</body>
