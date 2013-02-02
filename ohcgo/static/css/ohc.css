@@ -213,8 +213,28 @@ nav a {
 	padding-top: 0;
 }
 
-.intro p.firstChild {
+.intro p.firstChild  {
 	margin-top: 0;
+}
+
+body article div.person {
+    min-height: 260px;
+    margin-bottom: 60px;
+}
+
+.person h2 {
+    clear: both;
+}
+
+body article div.person img {
+    left: 0px;
+    display: inline-block;
+    position: relative;
+    float: left;
+}
+
+body article .person p {
+    padding: 0px 20px 0px 220px;
 }
 
 /* Only if we have the available width */

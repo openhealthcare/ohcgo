@@ -1,61 +1,26 @@
 {% extends 'base.html' %}
 {% block titlextra %} - Products and Projects{% endblock %}
 {% block content %}
-<h2>Tools for Insight</h2>
-<p>
-  Making decisions is hard.
-</h3>
-<h3>
-  To make great decisions, you need the right information, at the right time.
-</h3>
-<h3>
-  We can help.
-<h3>
-<h3>
-  How?
-</h3>
-<p>
-  By providing the infrastructure to access the data you need, the expertise
-  to help you figure out the right questions to ask, and the analytics to answer
-  those questions.
-</p>
-<ul>
-  <li>
-    Prescribing Analytics
-    == Tool Copy ==
-  </li>
-  <li>
-    Randomize me
-    == Tool Copy ==
-  </li>
-</ul>
+<div class="contentItem intro">
+  <div class="contentItemWrap">
+    <p class="firstChild">
+      Tools are really good things to have
+    </p>
+  </div>
+</div>
 
-<h2>Tools for Doctors</h2>
-<h3>
-  We believe in working smarter.
-</h3>
-<p>
-  Which is why we build applications that get out of the way, and help medical
-  staff to deliver great patient care. Faster, smoother, and built with the patient
-  in mind.
-</p>
-<ul>
-  <li>
-    NICE App
-    == Tool Copy ==
-  </li>
-  <li>
-    RCOG App
-    == Tool Copy ==
-  </li>
-  <li>
-    Great Place To Train
-    == Tool Copy ==
-  </li>
+<div class="contentItem intro">
+  <div class="contentItemWrap">
+    {% include 'tools/insight.html' %}
+  </div>
+</div>
 
-</ul>
+<div class="contentItem intro">
+  <div class="contentItemWrap">
+    {% include 'tools/doctors.html' %}
+  </div>
+</div>
 
-
-<h2>Tools for Teams (?similar format)</h2>
-<h2>Tools for Patients (?similar format)</h2>
+<!-- <h2>Tools for Teams (?similar format)</h2> -->
+<!-- <h2>Tools for Patients (?similar format)</h2> -->
 {% endblock %}
