@@ -3,112 +3,120 @@
 {% block page_type %}about{% endblock %}
 {% block content %}
 <article>
-<h2>
-  Making NHS IT less bad
-</h2>
-<p>
-  By building the foundations to understand the way that health
-  care is delivered, and showing how we can build upon those
-  foundations, we help the people shaping the delivery of medicine
-  to make great, informed decisions.
-</p>
-<p>
-  By building applications that help front-line medical staff
-  to work smarter, we smooth the rough edges of patient care,
-  letting people spend more time healing the sick and less time
-  grappling with the system.
-</p>
+	<div class="highlightBlock">
+		<h1>
+			Our purpose
+		</h1>
+		<div class="line">
+			<div class="unit size1of2">
+				<h2>
+					Making NHS IT less bad
+				</h2>
+				<p>
+					By building the foundations to understand the way that health
+					care is delivered, and showing how we can build upon those
+					foundations, we help the people shaping the delivery of medicine
+					to make great, informed decisions.
+				</p>
+				<p>
+					By building applications that help front-line medical staff
+					to work smarter, we smooth the rough edges of patient care,
+					letting people spend more time healing the sick and less time
+					grappling with the system.
+				</p>
+			</div>
+			<div class="lastUnit">
+				<h2>
+					Openness
+				</h2>
+				<p>
+					We believe that the peer review and accountability that
+					medical research benefits from should also be used to help
+					the tools that we use. Which is why we use an open source
+					stack for our building blocks, and publish our code.
+				</p>
+			</div>
+		</div>
+	</div>
+	<h1>
+		Our people
+	</h2>
+	<p>
+		Why don't you <a href="{% url who %}">meet the team</a>?
+	<p>
+	<h2>
+		Meet Open Health Care
+	</h2>
+	<div class="person">
+		<h3>
+			Carl Reynolds, Co-founder and CEO
+		</h3>
+		<img src="{{STATIC_URL}}img/profiles/carl.jpg"/>
+		<p>
+			Carl is a doctor and a geek on a mission to make NHS IT less bad.
+			He asks Ross how to do stuff a lot.
+		</p>
+	</div>
+	<div class="person">
+		<h3>
+			Ross Jones, Co-founder and COO
+		</h3>
+		<img src="{{STATIC_URL}}img/profiles/ross.jpg" />
+		<p>
+			Ross is a geek wizard who knows how to do stuff.
+			Seeing broken technology in the NHS pains him.
+		</p>
+	</div>
+	<div class="person">
+		<h3>
+			David Miller, full-stack developer and CTO
+		</h3>
+		<img src="{{STATIC_URL}}img/profiles/david.jpeg" />
+		<p>
+			David was born at a very young age. Sometime after that he studied Philosophy,
+			before deciding not to worry so much about the meaning of life.
+		</p>
+		<p>
+			Unrelated to this, he later became a software engineer, where serendipitously enough,
+			it turned out that having strong opinions about truthiness, and the logical
+			consistency of concepts could actually be of practical use.
+		</p>
+	</div>
+	</article>
 
-<h2>
-	Openness
-</h2>
-<p>
-	We believe that the peer review and accountability that
-	medical research benefits from should also be used to help
-	the tools that we use. Which is why we use an open source
-	stack for our building blocks, and publish our code.
-</p>
-<h2>Who are Open Health Care?</h2>
-<p>
-	Why don't you <a href="{% url who %}">meet the team</a>?
-<p>
+	<article>
+	<h2>
+		Advisory Board
+	</h2>
+	<div class="person">
+		<h3>
+			 Groucho Marx
+			 CHAIRMAN OF THE BOARD, CEO AND PRESIDENT
+		</h3>
+		<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Groucho_Marx_-_portrait.jpg/220px-Groucho_Marx_-_portrait.jpg"/>
+		<p>
+			Julius Henry "Groucho" Marx (October 2, 1890 – August 19, 1977) was an American comedian and film and television star. He is known as a master of quick wit and widely considered one of the best comedians of the modern era. His rapid-fire, often impromptu delivery of innuendo-laden patter earned him many admirers and imitators
+		</p>
+	</div>
+	<div class="person">
+		<h3>
+			Chico Marx
+			VICE CHAIRMAN OF THE BOARD
+		</h3>
+		<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Chico_Marx_-_signed.jpg/220px-Chico_Marx_-_signed.jpg" />
+		<p>
+			Leonard "Chico" Marx (March 22, 1887 – October 11, 1961) was an American comedian and film star as part of the Marx Brothers. His persona in the act was that of a dim-witted albeit crafty con artist, seemingly of rural Italian origin, who wore shabby clothes, and sported a curly-haired wig and Tyrolean hat.
+		</p>
+	</div>
+	<div class="person">
+		<h3>
+			Harpo Marx
+			CHAIRMAN OF VICE
+		</h3>
+		<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Harpo_Marx.jpg/220px-Harpo_Marx.jpg" />
+		<p>
+			Adolph "Harpo" Marx (later Arthur "Harpo" Marx) (November 23, 1888 – September 28, 1964) was an American comedian and film star. He was the second-oldest of the Marx Brothers. His comic style was influenced by clown and pantomime traditions. He wore a curly reddish blonde wig, and never spoke during performances (he blew a horn or whistled to communicate). Marx frequently used props such as a horn cane, made up of a lead pipe, tape, and a bulbhorn, and he played the harp in most of his films.
+		</p>
+	</div>
 </article>
-<article>
-<h2>
-  Meet Open Health Care
-</h2>
-<div class="person">
-  <h3>
-    Carl Reynolds, Co-founder and CEO
-  </h3>
-  <img src="{{STATIC_URL}}img/profiles/carl.jpg" height="200px" width="200px"/>
-  <p>
-    Carl is a doctor and a geek on a mission to make NHS IT less bad.
-    He asks Ross how to do stuff a lot.
-  </p>
-</div>
-<div class="person">
-  <h3>
-    Ross Jones, Co-founder and COO
-  </h3>
-  <img src="{{STATIC_URL}}img/profiles/ross.jpg" height="200px" width="200px" />
-  <p>
-    Ross is a geek wizard who knows how to do stuff.
-    Seeing broken technology in the NHS pains him.
-  </p>
-</div>
-<div class="person">
-  <h3>
-    David Miller, full-stack developer and CTO
-  </h3>
-  <img src="{{STATIC_URL}}img/profiles/david.jpeg" height="200px" width="200px" />
-  <p>
-    David was born at a very young age. Sometime after that he studied Philosophy,
-    before deciding not to worry so much about the meaning of life.
-  </p>
-  <p>
-    Unrelated to this, he later became a software engineer, where serendipitously enough,
-    it turned out that having strong opinions about truthiness, and the logical
-    consistency of concepts could actually be of practical use.
-  </p>
-</div>
-</article>
-
-<article>
-<h2>
-  Advisory Board
-</h2>
-<div class="person">
-  <h3>
-     Groucho Marx
-     CHAIRMAN OF THE BOARD, CEO AND PRESIDENT
-  </h3>
-  <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Groucho_Marx_-_portrait.jpg/220px-Groucho_Marx_-_portrait.jpg" height="200px" width="200px"/>
-  <p>
-    Julius Henry "Groucho" Marx (October 2, 1890 – August 19, 1977) was an American comedian and film and television star. He is known as a master of quick wit and widely considered one of the best comedians of the modern era. His rapid-fire, often impromptu delivery of innuendo-laden patter earned him many admirers and imitators
-  </p>
-</div>
-<div class="person">
-  <h3>
-    Chico Marx
-    VICE CHAIRMAN OF THE BOARD
-  </h3>
-  <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Chico_Marx_-_signed.jpg/220px-Chico_Marx_-_signed.jpg" height="200px" width="200px" />
-  <p>
-    Leonard "Chico" Marx (March 22, 1887 – October 11, 1961) was an American comedian and film star as part of the Marx Brothers. His persona in the act was that of a dim-witted albeit crafty con artist, seemingly of rural Italian origin, who wore shabby clothes, and sported a curly-haired wig and Tyrolean hat.
-  </p>
-</div>
-<div class="person">
-  <h3>
-    Harpo Marx
-    CHAIRMAN OF VICE
-  </h3>
-  <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Harpo_Marx.jpg/220px-Harpo_Marx.jpg" height="200px" width="200px" />
-  <p>
-    Adolph "Harpo" Marx (later Arthur "Harpo" Marx) (November 23, 1888 – September 28, 1964) was an American comedian and film star. He was the second-oldest of the Marx Brothers. His comic style was influenced by clown and pantomime traditions. He wore a curly reddish blonde wig, and never spoke during performances (he blew a horn or whistled to communicate). Marx frequently used props such as a horn cane, made up of a lead pipe, tape, and a bulbhorn, and he played the harp in most of his films.
-  </p>
-</div>
-</article>
-
-
 {% endblock %}

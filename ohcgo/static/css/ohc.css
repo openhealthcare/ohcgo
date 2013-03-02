@@ -21,7 +21,7 @@ a:hover,
 a:active,
 a:focus,
 .link {
-	background: rgb(60,60,150);
+	background: #bcbcda;
 	background: rgba(60,60,150,.3333);
 	cursor: pointer;
 }
@@ -152,7 +152,7 @@ body.tools       nav a[href*=/tools],
 body.hack-days   nav a[href*=/hack],
 body.consultancy nav a[href*=/consultancy],
 body.blog        nav a[href*=/blog] {
-	left: 76.66667%;
+	/* link highlight */
 }
 
 header .colophon,
@@ -246,17 +246,6 @@ article ul li:before {
 	margin-left: -1.5em;
 	margin-top: .5em;
 	width: .5em;
-}
-
-.contentItemWrap {
-	border-top: 1px solid;
-	padding-top: 1em;
-}
-
-.contentItem.intro .contentItemWrap {
-	border: none;
-	padding-left: 0;
-	padding-top: 0;
 }
 
 .intro p.firstChild {
@@ -387,10 +376,11 @@ body article .person p {
 
 	header,
 	nav,
+	.line,
 	body.home .content,
 	body.home .content .apps,
 	body.home .blog,
-	body.home .blog .lastUnit {
+	.lastUnit {
 		overflow: hidden;
 		*overflow: visible;
 		*zoom: 1;
@@ -405,13 +395,21 @@ body article .person p {
 	}
 
 	nav,
-	body.home .content .apps,
-	body.home .blog .lastUnit {
+	.line,
+	.lastUnit {
 		float: none;
 		width: auto;
 		_position: relative;
 		_left: -3px;
 		_margin-right: -3px;
 	}
+}
 
+/* Decorative items and inner page layout specifics */
+
+.highlightBlock {
+	background: #fae3b1;
+	background: rgba(244,177,25,.33);
+	margin: 0 0 1em;
+	padding: 1em;
 }
