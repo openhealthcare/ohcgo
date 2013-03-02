@@ -40,7 +40,7 @@
 		<meta name="MobileOptimized" content="320">
 		<meta name="viewport" content="width=device-width">
 		<link rel="stylesheet" href="/inc/css/ohc.css"/>
-                <link rel="shortcut icon" href="{{STATIC_URL}}img/favicon.ico">
+								<link rel="shortcut icon" href="{{STATIC_URL}}img/favicon.ico">
 	</head>
 	<body class="{% block page_type %}home{% endblock %}">
 		<!-- div class="twitter">
@@ -52,23 +52,23 @@
 			<div class="contentWrap">
 				<div class="colophon">
 					<h1>
-                                          <a href="{% url home %}"><img alt src="/inc/img/ohc-trans.png"/></a>
+						<a href="{% url home %}"><img alt src="/inc/img/ohc-trans.png"/></a>
 						<span class="text">
 							Open Health <span class="bffs">Care UK</span>
 						</span>
 					</h1>
 					<p class="strapline">
-                                          Making NHS IT less bad
-   		                        </p>
+						Making NHS IT less bad
+					</p>
 				</div>
 				<nav>
 					<ul>
 						<li>
-                                                  <!--
-                                                      The url tag is a reverse
-                                                      lookup on the routes in urls.py on
-                                                      the name keyword
-                                                    -->
+							<!--
+								The url tag is a reverse
+								lookup on the routes in urls.py on
+								the name keyword
+							-->
 							<a href="{% url products %}">
 								Tools
 							</a>
@@ -79,8 +79,13 @@
 							</a>
 						</li>
 						<li>
-							<a href="{% url consultancy %}">
+							<a href="#{#{% url consultancy %}#}">
 								Consultancy
+							</a>
+						</li>
+						<li>
+							<a href="{% url board %}">
+								Advisory board
 							</a>
 						</li>
 						<li class="lastUnit">
@@ -103,10 +108,10 @@
 		<div class="footer">
 			<div class="contentWrap">
 				<p>Get in touch! <br/><a href="mailto:hello@openhealthcare.org.uk">hello@openhealthcare.org.uk</a>
-                                </p>
-                                <p>
-                                  <a href="{% url about %}">About</a>
-                                </p>
+				</p>
+				<p>
+					<a href="{% url about %}">About</a>
+				</p>
 			</div>
 		</div>
 	</body>
