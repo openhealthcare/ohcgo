@@ -109,15 +109,15 @@ header {
 	color: #1d1d1b;
 }
 
+header h1 a:hover{
+	background: transparent;
+}
+
 header h1 img {
 	border: .125em solid #1d1d1b;
 	display: inline-block;
-	height: 1.3333em;
+	height: 2em;
 	vertical-align: baseline;
-}
-
-header h1 a:hover{
-	background: transparent;
 }
 
 header .colophon {
@@ -187,6 +187,7 @@ nav a {
 	display: block;
 	padding: 1em;
 	text-decoration: none;
+	white-space: nowrap;
 }
 
 .contentItemWrap {
@@ -284,7 +285,6 @@ body article .person p {
 
 	nav a {
 		font-size: 1.5em;
-		white-space: nowrap;
 	}
 
 	body.post article,
