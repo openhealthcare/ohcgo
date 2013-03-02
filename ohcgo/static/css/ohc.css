@@ -7,6 +7,10 @@ html {
 	    -ms-text-size-adjust: 100%;
 }
 
+body {
+	font-size: 80%;
+}
+
 .bffs {
 	white-space: nowrap;
 }
