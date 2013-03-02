@@ -26,15 +26,6 @@ a:focus,
 	cursor: pointer;
 }
 
-.content a:hover,
-.content a:focus,
-.content a:active {
-	margin-left:  -.1em;
-	margin-right: -.1em;
-	padding-left:  .1em;
-	padding-right: .1em;
-}
-
 img {
 	border: 0;
 	display: block;
