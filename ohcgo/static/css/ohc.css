@@ -134,15 +134,15 @@ body.tools       header .navWrap:before {
 }
 
 body.hack-days   header .navWrap:before {
-	left: 50%;
+	left: 60%;
 }
 
 body.consultancy header .navWrap:before {
-	left: 63.33333%;
+	left: 73.33333%;
 }
 
 body.blog        header .navWrap:before {
-	left: 76.66667%;
+	left: 86.66667%;
 }
 
 body.home        nav a[href*=/home],
