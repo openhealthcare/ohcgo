@@ -16,16 +16,13 @@
   those questions.
 </p>
 <ul>
+{% for tool in insight %}
   <li>
-    Prescribing Analytics
-    == Tool Copy ==
+    <h2>{{ tool.name }}</h2>
+    <p>
+      {{ tool.description }}
+    </p>
+    <img src="{{ STATIC_URL }}{{tool.image_location}}">
   </li>
-  <li>
-    Open Prescribing
-    == Tool Copy ==
-  </li>
-  <li>
-    Randomize me
-    == Tool Copy ==
-  </li>
+{% endfor %}
 </ul>
