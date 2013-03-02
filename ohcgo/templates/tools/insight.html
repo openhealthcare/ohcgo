@@ -1,3 +1,5 @@
+
+{% load markup %}
 <h2>Tools for Insight</h2>
 <p>
   Making decisions is hard.
@@ -20,7 +22,7 @@
   <li>
     <h2>{{ tool.name }}</h2>
     <p>
-      {{ tool.description }}
+      {{ tool.description|markdown }}
     </p>
     <img src="{{ STATIC_URL }}{{tool.image_location}}">
   </li>
