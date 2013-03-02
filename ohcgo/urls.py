@@ -1,3 +1,6 @@
+"""
+Root URLConf for OHC Website
+"""
 from django.conf.urls import patterns, include, url
 from django.views.generic import TemplateView, DetailView
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
@@ -6,14 +9,13 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.contrib import admin
 admin.autodiscover()
 
-from ohcgo.views import Home
+from ohcgo.views import Home, Tools
 from ohcgo.products.models import Product
 
 urlpatterns = patterns(
     '',
     url(r'^$', Home.as_view(), name='home'),
-    url(r'^tools$', TemplateView.as_view(template_name='tools.html'),
-        name='products'),
+    url(r'^tools$', Tools.as_view(), name='products'),
     url(r'^hack-days$', TemplateView.as_view(template_name='hackdays.html'), name='hackdays'),
     url(r'^consultancy$', TemplateView.as_view(template_name='consultancy.html'),
         name='consultancy'),
