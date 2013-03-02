@@ -4,7 +4,7 @@ html {
 	font: 400 1em/1.5 OpenSans, sans-serif;
 	color: #444;
 	-webkit-text-size-adjust: 100%;
-	    -ms-text-size-adjust: 100%;
+			-ms-text-size-adjust: 100%;
 }
 
 body {
@@ -23,31 +23,14 @@ a:hover,
 a:active,
 a:focus,
 .link {
+	background: rgb(60,60,150);
 	background: rgba(60,60,150,.3333);
 	cursor: pointer;
 }
 
-p a:hover,
-h1 a:hover,
-h2 a:hover,
-h3 a:hover,
-h4 a:hover,
-h5 a:hover,
-h6 a:hover,
-p a:active,
-h1 a:active,
-h2 a:active,
-h3 a:active,
-h4 a:active,
-h5 a:active,
-h6 a:active,
-p a:focus,
-h1 a:focus,
-h2 a:focus,
-h3 a:focus,
-h4 a:focus,
-h5 a:focus,
-h6 a:focus {
+.content a:hover,
+.content a:focus,
+.content a:active {
 	margin-left:  -.1em;
 	margin-right: -.1em;
 	padding-left:  .1em;
@@ -62,8 +45,8 @@ img {
 }
 
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
 html,
@@ -134,7 +117,7 @@ header h1 img {
 }
 
 header h1 a:hover{
-    background: transparent;
+		background: transparent;
 }
 
 header .colophon {
@@ -217,28 +200,28 @@ nav a {
 	padding-top: 0;
 }
 
-.intro p.firstChild  {
+.intro p.firstChild {
 	margin-top: 0;
 }
 
 body article div.person {
-    min-height: 260px;
-    margin-bottom: 60px;
+	min-height: 260px;
+	margin-bottom: 60px;
 }
 
 .person h2 {
-    clear: both;
+	clear: both;
 }
 
 body article div.person img {
-    left: 0px;
-    display: inline-block;
-    position: relative;
-    float: left;
+	left: 0;
+	display: inline-block;
+	position: relative;
+	float: left;
 }
 
 body article .person p {
-    padding: 0px 20px 0px 220px;
+	padding: 0px 20px 0px 220px;
 }
 
 /* Only if we have the available width */
