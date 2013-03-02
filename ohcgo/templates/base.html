@@ -53,50 +53,52 @@
 		-->
 		<header>
 			<div class="contentWrap">
-				<div class="colophon">
-					<h1>
-						<a href="{% url home %}">
-							<img alt src="/inc/img/ohc-trans.png"/>
-							<span class="text">
-								Open Health Care UK
-							</span>
-						</a>
-					</h1>
+				<div class="navWrap">
+					<div class="colophon">
+						<h1>
+							<a href="{% url home %}">
+								<img alt src="/inc/img/ohc-trans.png"/>
+								<span class="text">
+									Open Health Care UK
+								</span>
+							</a>
+						</h1>
+					</div>
+					<nav>
+						<ul>
+							<!--
+								The url tag is a reverse
+								lookup on the routes in urls.py on
+								the name keyword
+							-->
+							<li>
+								<a href="{% url board %}">
+									About
+								</a>
+							</li>
+							<li>
+								<a href="{% url products %}">
+									Tools
+								</a>
+							</li>
+							<li>
+								<a href="{% url hackdays %}">
+									Hack Days
+								</a>
+							</li>
+							<li>
+								<a href="{% url consultancy %}">
+									Consultancy
+								</a>
+							</li>
+							<li class="lastUnit">
+								<a href="#">
+									Blog
+								</a>
+							</li>
+						</ul>
+					</nav>
 				</div>
-				<nav>
-					<ul>
-						<!--
-							The url tag is a reverse
-							lookup on the routes in urls.py on
-							the name keyword
-						-->
-						<li>
-							<a href="{% url board %}">
-								About
-							</a>
-						</li>
-						<li>
-							<a href="{% url products %}">
-								Tools
-							</a>
-						</li>
-						<li>
-							<a href="{% url hackdays %}">
-								Hack Days
-							</a>
-						</li>
-						<li>
-							<a href="{% url consultancy %}">
-								Consultancy
-							</a>
-						</li>
-						<li class="lastUnit">
-							<a href="#">
-								Blog
-							</a>
-						</li>
-					</ul>
-				</nav>
 			</div>
 		</header>
 		<div class="content">

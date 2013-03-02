@@ -1,24 +1,25 @@
 {% extends 'base.html' %}
-{% block titlextra %} - Products and Projects{% endblock %}
+{% block titlextra %} &#8212; Tools{% endblock %}
+{% block page_type %}tools{% endblock %}
 {% block content %}
 <div class="contentItem intro">
-  <div class="contentItemWrap">
-    <p class="firstChild">
-      Tools are really good things to have
-    </p>
-  </div>
+	<div class="contentItemWrap">
+		<p class="firstChild">
+			Tools are really good things to have
+		</p>
+	</div>
 </div>
 
 <div class="contentItem intro">
-  <div class="contentItemWrap">
-    {% include 'tools/insight.html' %}
-  </div>
+	<div class="contentItemWrap">
+		{% include 'tools/insight.html' %}
+	</div>
 </div>
 
 <div class="contentItem intro">
-  <div class="contentItemWrap">
-    {% include 'tools/doctors.html' %}
-  </div>
+	<div class="contentItemWrap">
+		{% include 'tools/doctors.html' %}
+	</div>
 </div>
 
 <!-- <h2>Tools for Teams (?similar format)</h2> -->
