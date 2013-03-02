@@ -98,70 +98,6 @@ header {
 	color: #1d1d1b;
 }
 
-/* Used to highlight current area */
-
-header .navWrap {
-	position: relative;
-}
-
-header .navWrap:before {
-	background: #fff;
-	content: ' ';
-	display: block;
-	height: 20em;
-	left: 0;
-	overflow: hidden;
-	position: absolute;
-	top: -10em;
-	/*
-		In all cases but one, a nav entry,
-		therefore: 2/3 (nav width) / 5 (# of nav entries);
-	 */
-	width: 13.33333%;
-}
-
-body.home        header .navWrap:before {
-	width: 33.33333%;
-}
-
-body.about       header .navWrap:before {
-	left: 33.33333%;
-}
-
-body.tool        header .navWrap:before,
-body.tools       header .navWrap:before {
-	left: 46.66667%;
-}
-
-body.hack-days   header .navWrap:before {
-	left: 60%;
-}
-
-body.consultancy header .navWrap:before {
-	left: 73.33333%;
-}
-
-body.blog        header .navWrap:before {
-	left: 86.66667%;
-}
-
-body.home        nav a[href*=/home],
-body.about       nav a[href*=/about],
-body.tool        nav a[href*=/tools],
-body.tools       nav a[href*=/tools],
-body.hack-days   nav a[href*=/hack],
-body.consultancy nav a[href*=/consultancy],
-body.blog        nav a[href*=/blog] {
-	/* link highlight */
-}
-
-header .colophon,
-header nav {
-	position: relative;
-}
-
-/*/*/
-
 header a {
 	color: inherit;
 	display: block;
@@ -403,6 +339,70 @@ body article .person p {
 		_left: -3px;
 		_margin-right: -3px;
 	}
+
+	/* Used to highlight current area */
+
+	header .navWrap {
+		position: relative;
+	}
+
+	header .navWrap:before {
+		background: #fff;
+		content: ' ';
+		display: block;
+		height: 20em;
+		left: 0;
+		overflow: hidden;
+		position: absolute;
+		top: -10em;
+		/*
+			In all cases but one, a nav entry,
+			therefore: 2/3 (nav width) / 5 (# of nav entries);
+		 */
+		width: 13.33333%;
+	}
+
+	body.home        header .navWrap:before {
+		width: 33.33333%;
+	}
+
+	body.about       header .navWrap:before {
+		left: 33.33333%;
+	}
+
+	body.tool        header .navWrap:before,
+	body.tools       header .navWrap:before {
+		left: 46.66667%;
+	}
+
+	body.hack-days   header .navWrap:before {
+		left: 60%;
+	}
+
+	body.consultancy header .navWrap:before {
+		left: 73.33333%;
+	}
+
+	body.blog        header .navWrap:before {
+		left: 86.66667%;
+	}
+
+	body.home        nav a[href*=/home],
+	body.about       nav a[href*=/about],
+	body.tool        nav a[href*=/tools],
+	body.tools       nav a[href*=/tools],
+	body.hack-days   nav a[href*=/hack],
+	body.consultancy nav a[href*=/consultancy],
+	body.blog        nav a[href*=/blog] {
+		/* link highlight */
+	}
+
+	header .colophon,
+	header nav {
+		position: relative;
+	}
+
+	/*/*/
 }
 
 /* Decorative items and inner page layout specifics */
