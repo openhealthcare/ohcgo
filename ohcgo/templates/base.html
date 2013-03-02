@@ -21,9 +21,18 @@
 		<title>Open Health Care UK {% block titlextra %}{% endblock %}</title>
 		<script>
 			// Give CSS-readable feedback of the fact that the page is scripted, and the page is loading
-			void function loadWait(h,c){h[c]=h[c].replace('un','loading ');onload=setTimeout(function(){h[c]=h[c].replace('loading','')},500)}(document.lastChild,'className');
+			void function loadWait(h,c){
+				h[c]   = h[c].replace('un','loading ');
+				onload = setTimeout(function removeLoadingClass(){
+					h[c] = h[c].replace('loading','')
+				},500);
+			}(document.lastChild,'className');
 			// I use some HTML5 elements. May as well tell the browser.
-			void function addElements(e){while(e.length) document.createElement(e.pop())}(['article','header','nav','section']);
+			void function addElements(e){
+				while(e.length){
+					document.createElement(e.pop())
+				}
+			}(['article','header','nav','section']);
 		</script>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="description" content="Open-source IT solutions for patients and healthcare professionals">
