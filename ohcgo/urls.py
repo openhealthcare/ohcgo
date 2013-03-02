@@ -17,6 +17,9 @@ urlpatterns = patterns(
     url(r'^$', Home.as_view(), name='home'),
     url(r'^tools$', Tools.as_view(), name='products'),
     url(r'^hack-days$', TemplateView.as_view(template_name='hackdays.html'), name='hackdays'),
+    url(r'^board$', TemplateView.as_view(template_name='board.html'),
+        name='board'),
+
     url(r'^consultancy$', TemplateView.as_view(template_name='consultancy.html'),
         name='consultancy'),
     url(r'^about$', TemplateView.as_view(template_name='about.html'), name='about'),
