@@ -102,7 +102,6 @@ header a {
 	color: inherit;
 	display: block;
 	text-decoration: none;
-	white-space: nowrap;
 }
 
 header h1 {
@@ -118,6 +117,25 @@ header h1 img {
 	display: inline-block;
 	height: 2em;
 	vertical-align: baseline;
+}
+
+header h1 span {
+	display: inline-block;
+	overflow: hidden;
+}
+
+@media (max-width: 30em), (width: 30em) {
+	body.home        nav a[href*=/home],
+	body.about       nav a[href*=/about],
+	body.tool        nav a[href*=/tools],
+	body.tools       nav a[href*=/tools],
+	body.hack-days   nav a[href*=/hack],
+	body.consultancy nav a[href*=/consultancy],
+	body.blog        nav a[href*=/blog] {
+		border: solid #fff;
+		border-width: 0 2em;
+		margin: 0 -2em;
+	}
 }
 
 nav {
@@ -259,6 +277,7 @@ body article .person p {
 
 	header {
 		margin-bottom: 5em;
+		white-space: nowrap;
 	}
 
 	header .strapline {
@@ -340,7 +359,7 @@ body article .person p {
 		_margin-right: -3px;
 	}
 
-	/* Used to highlight current area */
+	/* Used to highlight current top level nav context */
 
 	header .navWrap {
 		position: relative;
@@ -385,16 +404,6 @@ body article .person p {
 
 	body.blog        header .navWrap:before {
 		left: 86.66667%;
-	}
-
-	body.home        nav a[href*=/home],
-	body.about       nav a[href*=/about],
-	body.tool        nav a[href*=/tools],
-	body.tools       nav a[href*=/tools],
-	body.hack-days   nav a[href*=/hack],
-	body.consultancy nav a[href*=/consultancy],
-	body.blog        nav a[href*=/blog] {
-		/* link highlight */
 	}
 
 	header .colophon,
