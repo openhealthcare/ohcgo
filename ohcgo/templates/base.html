@@ -42,6 +42,24 @@
 		<link rel="stylesheet" href="/inc/css/OpenSans.css"/>
 		<link rel="stylesheet" href="/inc/css/ohc.css"/>
 		<link rel="shortcut icon" href="{{STATIC_URL}}img/favicon.ico">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script>
+			void function conditionallyLoadScripts(){
+				function loadScript(url){
+					document.write('<script src="' + url + '"><\/script>');
+				};
+
+				// If jQuery didn't come through from the CDN
+				if(!window.jQuery){
+					loadScript('/inc/javascript/jquery-1.9.1.min.js');
+				}
+
+				// If we're on old IE, call Selectivizr for CSS3 usage
+				if(/ie(6|7|8)/.test(document.lastChild.className)){
+					loadScript('/inc/javascript/selectivizr.min.js');
+				}
+			}();
+		</script>
 	</head>
 	<body class="{% block page_type %}home{% endblock %}">
 		<!--
