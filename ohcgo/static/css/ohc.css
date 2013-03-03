@@ -342,7 +342,6 @@ body article .person p {
 
 	header,
 	nav,
-	.line,
 	body.home .content,
 	body.home .content .apps,
 	body.home .blog,
@@ -360,9 +359,7 @@ body article .person p {
 		width: 33.33333%;
 	}
 
-	nav,
-	.line,
-	.lastUnit {
+	nav {
 		float: none;
 		width: auto;
 		_position: relative;

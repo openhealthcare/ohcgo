@@ -1,37 +1,37 @@
 /* Allow the specification of a `.line` element to make its children occupy fractional widths */
-.line,
-.line > :nth-child(n+2):last-child {
+.columnGroup,
+.columnGroup > :nth-child(n+2):last-child {
 	overflow: hidden;
 	*overflow: visible;
 	*zoom:1;
 }
-.line > *,
+.columnGroup > *,
 .unit {
 	float:left;
 }
-.line > :nth-child(1):nth-last-child(2),
+.columnGroup > :nth-child(1):nth-last-child(2),
 .size1of2 {
 	width:50%;
 }
-.line > :nth-child(1):nth-last-child(3),
-.line > :nth-child(2):nth-last-child(2),
+.columnGroup > :nth-child(1):nth-last-child(3),
+.columnGroup > :nth-child(2):nth-last-child(2),
 .size1of3 {
 	width:33.33333%;
 }
-.line > :nth-child(1):nth-last-child(4),
-.line > :nth-child(2):nth-last-child(3),
-.line > :nth-child(3):nth-last-child(2),
+.columnGroup > :nth-child(1):nth-last-child(4),
+.columnGroup > :nth-child(2):nth-last-child(3),
+.columnGroup > :nth-child(3):nth-last-child(2),
 .size1of4 {
 	width:25%;
 }
-.line > :nth-child(1):nth-last-child(5),
-.line > :nth-child(2):nth-last-child(4),
-.line > :nth-child(3):nth-last-child(3),
-.line > :nth-child(4):nth-last-child(2),
+.columnGroup > :nth-child(1):nth-last-child(5),
+.columnGroup > :nth-child(2):nth-last-child(4),
+.columnGroup > :nth-child(3):nth-last-child(3),
+.columnGroup > :nth-child(4):nth-last-child(2),
 .size1of5 {
 	width:20%;
 }
-.line > :last-child,
+.columnGroup > :last-child,
 .lastUnit {
 	float:none;
 	width:auto;
@@ -39,7 +39,7 @@
 	_margin-right:-3px;
 	_position:relative;
 }
-.line > :only-childn {
+.columnGroup > :only-child {
 	float:none;
 	overflow:visible;
 }
