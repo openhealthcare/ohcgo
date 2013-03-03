@@ -125,12 +125,12 @@ header h1 span {
 }
 
 @media (max-width: 30em), (width: 30em) {
-	body.home        nav a[href*=/home],
-	body.about       nav a[href*=/about],
-	body.tool        nav a[href*=/tools],
-	body.tools       nav a[href*=/tools],
-	body.hack-days   nav a[href*=/hack],
-	body.consultancy nav a[href*=/consultancy],
+	body.home        nav a[href*="/home"],
+	body.about       nav a[href*="/about"],
+	body.tool        nav a[href*="/tools"],
+	body.tools       nav a[href*="/tools"],
+	body.hack-days   nav a[href*="/hack"],
+	body.consultancy nav a[href*="/consultancy"],
 	body.blog        nav a[href*=/blog] {
 		border: solid #fff;
 		border-width: 0 2em;
