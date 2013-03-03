@@ -24,7 +24,7 @@
 			void function loadWait(h,c){
 				h[c]   = h[c].replace('un','loading ');
 				onload = setTimeout(function removeLoadingClass(){
-					h[c] = h[c].replace('loading','')
+					h[c] = h[c].replace('loading','loaded')
 				},500);
 			}(document.lastChild,'className');
 			// I use some HTML5 elements. May as well tell the browser.

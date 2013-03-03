@@ -1,3 +1,11 @@
+/* Loading style: hide until we're ready; */
+
+html.loading body {
+	visibility: hidden;
+}
+
+/*/*/
+
 html {
 	font: 400 1em/1.5 OpenSans, sans-serif;
 	color: #444;
