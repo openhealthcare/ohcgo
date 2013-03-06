@@ -27,13 +27,8 @@
 					h[c] = h[c].replace('loading','loaded')
 				},500);
 			}(document.lastChild,'className');
-			// I use some HTML5 elements. May as well tell the browser.
-			void function addElements(e){
-				while(e.length){
-					document.createElement(e.pop())
-				}
-			}(['article','header','nav','section']);
 		</script>
+		<script src="/inc/javascript/modernizr.min.js"></script>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="description" content="Open-source IT solutions for patients and healthcare professionals">
 		<meta name="HandheldFriendly" content="True">
@@ -83,40 +78,38 @@
 							</a>
 						</h1>
 					</div>
-					<nav>
-						<ul class="line">
-							<!--
-								The url tag is a reverse
-								lookup on the routes in urls.py on
-								the name keyword
-							-->
-							<li>
-								<a href="{% url about %}">
-									About
-								</a>
-							</li>
-							<li>
-								<a href="{% url products %}">
-									Tools
-								</a>
-							</li>
-							<li>
-								<a href="{% url hackdays %}">
-									Hack Days
-								</a>
-							</li>
-							<li>
-								<a href="{% url consultancy %}">
-									Consultancy
-								</a>
-							</li>
-							<li class="lastUnit">
-								<a href="#">
-									Blog
-								</a>
-							</li>
-						</ul>
-					</nav>
+					<ul class="nav fractionGroup">
+						<!--
+							The url tag is a reverse
+							lookup on the routes in urls.py on
+							the name keyword
+						-->
+						<li>
+							<a href="{% url about %}">
+								About
+							</a>
+						</li>
+						<li>
+							<a href="{% url products %}">
+								Tools
+							</a>
+						</li>
+						<li>
+							<a href="{% url hackdays %}">
+								Hack Days
+							</a>
+						</li>
+						<li>
+							<a href="{% url consultancy %}">
+								Consultancy
+							</a>
+						</li>
+						<li class="lastUnit">
+							<a href="#">
+								Blog
+							</a>
+						</li>
+					</ul>
 				</div>
 			</div>
 		</header>

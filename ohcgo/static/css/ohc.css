@@ -57,7 +57,7 @@ body {
 	padding-bottom: 15em;
 }
 
-article, header, nav {
+article, header {
 	display: block;
 	position: relative;
 }
@@ -135,7 +135,7 @@ header h1 span {
 
 /* Used to highlight current top level nav context */
 
-@media (max-width: 30em), (width: 30em) {
+@media (max-width: 30em), not (width: 30em) {
 	body.home        nav a[href="/home"],
 	body.about       nav a[href="/about"],
 	body.tool        nav a[href="/tools"],
@@ -149,21 +149,18 @@ header h1 span {
 	}
 }
 
-nav {
+header ul {
 	background: #1d1d1b;
 	color: #f4b119;
-}
-
-nav ul {
 	margin: 0;
 	padding: 0;
 }
 
-nav li {
+header li {
 	list-style: none;
 }
 
-nav a {
+header li a {
 	line-height: 1;
 	padding: 1em;
 }
@@ -254,34 +251,6 @@ body article .person p {
 		font-size: 1.25em;
 		font-weight: 600;
 	}
-
-	/* Extrapolations fom Stubbornella's OOCSS grids module
-	 * https://github.com/stubbornella/oocss/blob/master/core/grid/grids.css
-	 */
-
-	nav ul,
-	nav li.lastUnit {
-		overflow: hidden;
-		*overflow: visible;
-		*zoom: 1;
-	}
-
-	nav li {
-		float: left;
-	}
-
-	nav li {
-		width: 20%;
-	}
-
-	nav li.lastUnit {
-		float: none;
-		width: auto;
-		_position: relative;
-		_left: -3px;
-		_margin-right: -3px;
-	}
-
 }
 
 @media (min-width: 60em) {
@@ -296,75 +265,18 @@ body article .person p {
 		font-weight: 600;
 	}
 
-	nav a {
+	header li a {
 		font-size: 1.5em;
-	}
-
-	body.post article,
-	body.tool article {
-		margin-left: 33.33333%;
-		padding-left: 1em;
-	}
-
-	body.post article img,
-	body.tool article img {
-		position: absolute;
-		left: -50%;
-		max-height: none;
-		max-width: 50%;
-	}
-
-	body.post article .colophon,
-	body.tool article .colophon {
-		position: absolute;
-		left: -50%;
-		text-align: right;
-		top: 0;
-		width: 50%;
-	}
-
-	.contentItemWrap {
-		border-left: 1px solid;
-		border-top: none;
-		padding-left: 1em;
-		padding-right: 1em;
-		padding-top: 0;
-	}
-
-	.firstUnit .contentItemWrap {
-		border-left: none;
-		padding-left: 0;
 	}
 
 	.intro {
 		padding-top: 3em;
 	}
 
-	header,
-	nav,
-	body.home .content,
-	body.home .content .apps,
-	body.home .blog,
-	.lastUnit {
+	header {
 		overflow: hidden;
 		*overflow: visible;
 		*zoom: 1;
-	}
-
-	header .colophon,
-	body.home .content .intro,
-	body.home .content .featured,
-	body.home .blog article {
-		float: left;
-		width: 33.33333%;
-	}
-
-	nav {
-		float: none;
-		width: auto;
-		_position: relative;
-		_left: -3px;
-		_margin-right: -3px;
 	}
 
 	/* Used to highlight current top level nav context */
@@ -415,7 +327,7 @@ body article .person p {
 	}
 
 	header .colophon,
-	header nav {
+	header ul {
 		position: relative;
 	}
 
