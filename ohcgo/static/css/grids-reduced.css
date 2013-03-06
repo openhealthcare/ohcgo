@@ -46,25 +46,25 @@
 		float:left;
 	}
 	.fractionGroup > :nth-child(1):nth-last-child(2),
-	.size1of2 {
+	.size1of2:nth-child(n):nth-child(n):nth-child(n) {
 		width:50%;
 	}
 	.fractionGroup > :nth-child(1):nth-last-child(3),
 	.fractionGroup > :nth-child(2):nth-last-child(2),
-	.size1of3 {
+	.size1of3:nth-child(n):nth-child(n):nth-child(n) {
 		width:33.33333%;
 	}
 	.fractionGroup > :nth-child(1):nth-last-child(4),
 	.fractionGroup > :nth-child(2):nth-last-child(3),
 	.fractionGroup > :nth-child(3):nth-last-child(2),
-	.size1of4 {
+	.size1of4:nth-child(n):nth-child(n):nth-child(n) {
 		width:25%;
 	}
 	.fractionGroup > :nth-child(1):nth-last-child(5),
 	.fractionGroup > :nth-child(2):nth-last-child(4),
 	.fractionGroup > :nth-child(3):nth-last-child(3),
 	.fractionGroup > :nth-child(4):nth-last-child(2),
-	.size1of5 {
+	.size1of5:nth-child(n):nth-child(n):nth-child(n) {
 		width:20%;
 	}
 	.fractionGroup > :last-child,
