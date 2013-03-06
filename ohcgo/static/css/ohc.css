@@ -282,6 +282,7 @@ body article .person p {
 	/* Used to highlight current top level nav context */
 
 	header .navWrap {
+		overflow: visible;
 		position: relative;
 	}
 
