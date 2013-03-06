@@ -67,7 +67,7 @@
 	.size1of5:nth-child(n):nth-child(n):nth-child(n) {
 		width:20%;
 	}
-	.fractionGroup > :last-child,
+	.fractionGroup > :last-child:last-child:last-child,
 	.lastUnit {
 		float:none;
 		width:auto;
