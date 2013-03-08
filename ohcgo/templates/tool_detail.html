@@ -2,28 +2,28 @@
 {% load markup %}
 {% block page_type %}tool{% endblock %}
 {% block content %}
-<article>
-	<h1>
-		{{object.name}}
-	</h1>
-	<p class="colophon">
-		<span class="article_type">
-			Tool
-		</span>
-	</p>
-	{% if object.image_location %}
-	<img alt="{object.name} imagery" class="hero" src="{{object.image_location}}"/>
-	{% endif %}
-	<div class="description">
+  <h1>
+    {{object.name}}
+  </h1>
+
+  <div class="fractionGroup">
+    <div>
+      {% if object.image_location %}
+	<img alt="{object.name} imagery" class="hero" src="{{STATIC_URL}}{{object.image_location}}"/>
+      {% endif %}
+    </div>
+    <div>
+      <div class="description">
 	{{object.description|markdown}}
-	</div>
-	{% if object.get_the_app or object.question or object.tracker %}
+      </div>
+
+	{% if object.get_the_app or object.question or object.tracker or object.source %}
 	<div class="app_meta">
 		{% if object.get_the_app %}
 		<h2>
 			Get {{object.name}}
 		</h2>
-		{{object.get_the_app}}
+		{{object.get_the_app|markdown}}
 		{% endif %}
 		{% if object.question or object.tracker %}
 		<h2>
@@ -46,7 +46,21 @@
 			{% endif %}
 		</ul>
 		{% endif %}
-	</div>
-</article>
+                {% if object.source %}
+                  <h2>
+                    Source Code
+                  </h2>
+                  <ul class="source">
+                    <li>
+                      <a href="{{object.source}}">
+                        Contribute
+                      </a>
+                    </li>
+                  </ul>
+                {% endif %}
+        </div>
+
+    </div>
+  </div>
 {% endif %}
 {% endblock %}

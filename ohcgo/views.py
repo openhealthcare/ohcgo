@@ -3,6 +3,7 @@ Base Views for the OHC Django site
 """
 from django.views.generic import TemplateView
 
+from ohcgo import feeds
 from ohcgo.products.models import Product
 
 class Home(TemplateView):
@@ -23,6 +24,7 @@ class Home(TemplateView):
         """
         context = super(Home, self).get_context_data(**kw)
         context['products'] = Product.objects.all()
+        context['entries'] = feeds.recent_posts()
         return context
 
 class Tools(TemplateView):

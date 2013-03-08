@@ -214,7 +214,7 @@ article ul li:before {
 	margin-top: 0;
 }
 
-body article div.person {
+body div.person {
 	min-height: 260px;
 	margin-bottom: 60px;
 }
@@ -223,10 +223,11 @@ body article div.person {
 	clear: both;
 }
 
-body article div.person img {
+body div.person img {
 	left: 0;
 	display: inline-block;
 	position: relative;
+        padding-right: 20px;
 	float: left;
 }
 

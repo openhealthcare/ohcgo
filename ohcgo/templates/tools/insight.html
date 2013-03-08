@@ -1,30 +1,20 @@
-
 {% load markup %}
-<h2>Tools for Insight</h2>
-<p>
-  Making decisions is hard.
-  <h3>
-    To make great decisions, you need the right information, at the right time.
-  </h3>
-  <h3>
-    We can help.
-  </h3>
-  <h3>
-    How?
-  </h3>
-<p>
-  By providing the infrastructure to access the data you need, the expertise
-  to help you figure out the right questions to ask, and the analytics to answer
-  those questions.
-</p>
-<ul>
+
 {% for tool in insight %}
-  <li>
-    <h2>{{ tool.name }}</h2>
+<div class="fractionGroup">
+  <div>
+    <img src="{{ STATIC_URL }}{{tool.image_location}}">
+  </div>
+  <div>
+    <h2>
+      <a href="{{ tool.get_absolute_url }}">
+        {{ tool.name }}
+      </a>
+    </h2>
     <p>
       {{ tool.description|markdown }}
     </p>
-    <img src="{{ STATIC_URL }}{{tool.image_location}}">
-  </li>
+  </div>
+</div>
+<hr />
 {% endfor %}
-</ul>

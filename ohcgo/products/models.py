@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.urlresolvers import reverse
 
 class Product(models.Model):
     """
@@ -18,6 +19,7 @@ class Product(models.Model):
     description    = models.TextField()
     image_location = models.CharField(max_length=200)
     tracker        = models.URLField(blank=True, null=True)
+    source         = models.URLField(blank=True, null=True)
     get_the_app    = models.TextField(blank=True, null=True, help_text=_getapp_help)
     question       = models.CharField(max_length=200, blank=True, null=True,
                                       help_text=_question_help)
@@ -27,3 +29,6 @@ class Product(models.Model):
 
     def __unicode__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('tool_detail', kwargs={'pk': self.pk})
