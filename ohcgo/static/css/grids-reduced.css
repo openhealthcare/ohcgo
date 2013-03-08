@@ -24,17 +24,18 @@
 
   .delineated > * + * {
     border-left: 1px solid;
-    margin-left: -1px;
     padding-left: 1em;
   }
 
   .delineated > * {
     border-right: 1px solid;
+    margin-right: -1px;
   }
 
   .delineated > :last-child,
   .delineated .lastUnit {
     border-right: 0;
+    margin-right: 0;
   }
 
   /* Allow the specification of a `.fractionGroup` element to make its children occupy fractional widths */

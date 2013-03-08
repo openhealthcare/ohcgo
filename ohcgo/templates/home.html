@@ -2,75 +2,73 @@
 {% load markup %}
 {% block titlextra %} &#8212; Welcome{% endblock %}
 {% block content %}
-<div class="fractionGroup delineated">
-	<div class="intro">
-		<p class="firstChild">
-			By building the foundations to understand the way that health care is delivered, and showing how we can build upon those foundations, we help the people shaping the delivery of medicine to make great, informed decisions.
-		</p>
-		<p>
-			By building applications that help front-line medical staff to work smarter, we smooth the rough edges of patient care, letting people spend more time healing the sick and less time grappling with the system.
-		</p>
-	</div>
-	<div class="contentItem featured">
-		<h2>
-			NHS Hack Day 3: Oxford
-		</h2>
-		<img alt="NHS Hack Day logo" src="/inc/img/hack-day.png" />
-		<p>
-			The 3rd NHS Hack Day takes place in Tingewick Hall, John Radcliffe Hospital, Oxford, on the 26th and 27th of January 2013. Be there!
-		</p>
-	</div>
-	<div class="contentItem apps">
-		<h2>
-			Tools
-		</h2>
-		<!-- Demonstrative of extra context now being passed -->
-		{% for tool in products %}
-		<article>
-			<h3>
-				{{tool.name}}
-			</h3>
-			<p>
-				{{tool.description|markdown}}
-			</p>
-		</article>
-		{% endfor %}
-	</div>
-</div>
+  <div class="fractionGroup delineated">
+    <div class="intro">
+      <p class="firstChild">
+	By building the foundations to understand the way that health care is delivered, and showing how we can build upon those foundations, we help the people shaping the delivery of medicine to make great, informed decisions.
+      </p>
+      <p>
+	By building applications that help front-line medical staff to work smarter, we smooth the rough edges of patient care, letting people spend more time healing the sick and less time grappling with the system.
+      </p>
+    </div>
+    <div class="contentItem featured">
+      <h2>
+        <a href="{{featured.get_absolute_url}}">
+	  {{ featured.name }}
+        </a>
+      </h2>
+      <img alt="NHS Hack Day logo" src="{{STATIC_URL}}{{ featured.image_location }}" />
+      <p>
+	{{ featured.description|markdown }}
+      </p>
+    </div>
+    <div class="contentItem apps">
+      <h2>
+	Tools
+      </h2>
+      <!-- Demonstrative of extra context now being passed -->
+      {% for tool in products %}
+	<article>
+	  <h3>
+            <a href="{{tool.get_absolute_url}}">
+	      {{tool.name}}
+            </a>
+	  </h3>
+	  <p>
+	    {{tool.description|markdown}}
+	  </p>
+	</article>
+      {% endfor %}
+    </div>
+  </div>
 {% endblock %}
 
 {% block content_after %}
-<div class="blog">
-	<div class="contentWrap">
-		<h2>
-			From the blog
-		</h2>
-		<div class="fractionGroup delineated">
-			<article>
-				<h3>
-					Open data, peer production, and prescribing analytics
-				</h3>
-				<p>
-					Last week saw the launch of prescribinganalytics.com (covered in the economist and elsewhere). At present it’s ‘just’ a nice data visualisation of some interesting open data that show the NHS could potentially save millions from it’s drug budget.
-				</p>
-			</article>
-			<article>
-				<h3>
-					Why trusts should get behind NHS Hack Days and back ‘geeks who love the NHS’
-				</h3>
-				<p>
-					NHS Hack Days demonstrate the value of a modern approach to NHS IT procurement and show the way forwards for competitive trusts. The first ever NHS Hack Day took place in London recently.
-				</p>
-			</article>
-			<article>
-				<h3>
-					Our response to the NHS Information Strategy
-				</h3>
-				<p>
-					Last month saw the publication of the eagerly awaited NHS information strategy. With the ‘Liberating the NHS’ reforms now taking shape on the ground, the document may well be the final word on IT from the Department of Health.
-				</p>
-			</article>
-		</div>
-	</div>
-</div>
+  <div class="blog">
+    <div class="contentWrap">
+      <h2>
+	From the blog
+      </h2>
+      <div class="fractionGroup delineated">
+        {% for article in entries %}
+	  <article>
+	    <h3>
+              <a href="{{ article.link }}">
+                {{ article.title }}
+              </a>
+	    </h3>
+	    <p>
+              {% autoescape off %}
+                {{ article.description }}...
+              {% endautoescape %}
+              <a href="{{ article.link }}">
+                read more
+              </a>
+	    </p>
+	  </article>
+
+        {% endfor %}
+      </div>
+    </div>
+  </div>
 {% endblock %}

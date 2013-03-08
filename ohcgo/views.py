@@ -3,6 +3,7 @@ Base Views for the OHC Django site
 """
 from django.views.generic import TemplateView
 
+from ohcgo import feeds
 from ohcgo.products.models import Product
 
 class Home(TemplateView):
@@ -22,7 +23,12 @@ class Home(TemplateView):
         Exceptions: None
         """
         context = super(Home, self).get_context_data(**kw)
-        context['products'] = Product.objects.all()
+        context['products'] = Product.objects.filter(frontpage=True)
+        context['entries'] = feeds.recent_posts()
+        try:
+            context['featured'] = Product.objects.filter(featured=True)[0]
+        except IndexError:
+            context['featured'] = context['products'][0]
         return context
 
 class Tools(TemplateView):
