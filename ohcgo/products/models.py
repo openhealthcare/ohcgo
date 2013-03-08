@@ -25,6 +25,8 @@ class Product(models.Model):
                                       help_text=_question_help)
     category       = models.CharField(max_length=2, choices=CATEGORY_CHOICES,
                                       blank=True, null=True)
+    featured       = models.BooleanField(default=False)
+    frontpage      = models.BooleanField(default=False)
 
 
     def __unicode__(self):

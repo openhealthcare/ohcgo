@@ -13,11 +13,11 @@
     </div>
     <div class="contentItem featured">
       <h2>
-	NHS Hack Day 3: Oxford
+	{{ featured.name }}
       </h2>
-      <img alt="NHS Hack Day logo" src="/inc/img/hack-day.png" />
+      <img alt="NHS Hack Day logo" src="{{STATIC_URL}}{{ featured.image_location }}" />
       <p>
-	The 3rd NHS Hack Day takes place in Tingewick Hall, John Radcliffe Hospital, Oxford, on the 26th and 27th of January 2013. Be there!
+	{{ featured.description|markdown }}
       </p>
     </div>
     <div class="contentItem apps">

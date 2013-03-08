@@ -6,8 +6,8 @@ class ProductAdmin(admin.ModelAdmin):
     """
     Make products editable
     """
-    list_display = ('name', 'description', 'image_location', 'category')
-    list_editable = ('description', 'image_location', 'category')
+    list_display = ('name', 'frontpage', 'featured', 'category')
+    list_editable = ('frontpage', 'featured', 'category')
     list_filter = ('category',)
 
 admin.site.register(models.Product, ProductAdmin)

@@ -23,8 +23,12 @@ class Home(TemplateView):
         Exceptions: None
         """
         context = super(Home, self).get_context_data(**kw)
-        context['products'] = Product.objects.all()
+        context['products'] = Product.objects.filter(frontpage=True)
         context['entries'] = feeds.recent_posts()
+        try:
+            context['featured'] = Product.objects.filter(featured=True)[0]
+        except IndexError:
+            context['featured'] = context['products'][0]
         return context
 
 class Tools(TemplateView):
