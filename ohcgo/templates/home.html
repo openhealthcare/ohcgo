@@ -13,7 +13,9 @@
     </div>
     <div class="contentItem featured">
       <h2>
-	{{ featured.name }}
+        <a href="{{featured.get_absolute_url}}">
+	  {{ featured.name }}
+        </a>
       </h2>
       <img alt="NHS Hack Day logo" src="{{STATIC_URL}}{{ featured.image_location }}" />
       <p>
@@ -28,7 +30,9 @@
       {% for tool in products %}
 	<article>
 	  <h3>
-	    {{tool.name}}
+            <a href="{{tool.get_absolute_url}}">
+	      {{tool.name}}
+            </a>
 	  </h3>
 	  <p>
 	    {{tool.description|markdown}}
