@@ -1,21 +1,17 @@
 <!doctype html>
-<!--[if !IEMobile]>
-	<![if lt IE 7]>
+<!--[if lt IE 7]>
 <html class="unscripted ie ie6" lang="en">
-	<![endif]>
-	<![if IE 7]>
+<![endif]>
+<![if IE 7]>
 <html class="unscripted ie ie7" lang="en">
-	<![endif]>
-	<![if IE 8]>
+<![endif]>
+<![if IE 8]>
 <html class="unscripted ie ie8" lang="en">
-	<![endif]>
-	<![if IE 9]>
+<![endif]>
+<![if IE 9]>
 <html class="unscripted ie ie9" lang="en">
-	<![endif]>
 <![endif]-->
-<!--[if gt IE 9]><!-->
 <html class="unscripted" lang="en" style="-webkit-transform: translateZ(0)">
-<!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
 		<title>Open Health Care UK {% block titlextra %}{% endblock %}</title>
@@ -122,11 +118,29 @@
 		{% block content_after %}
 		{% endblock %}
 		<div class="footer">
-		  <div class="contentWrap">
-
-		    <p>Get in touch! <br/><a href="mailto:hello@openhealthcare.org.uk">hello@openhealthcare.org.uk</a>
-		    </p>
-		  </div>
+			<div class="contentWrap">
+				<h2>Get in touch with OHC</h2>
+				<p>Send an email to <a href="mailto:hello@openhealthcare.org.uk">hello@openhealthcare.org.uk</a> or fill in the following form:</p>
+				<form action="#">
+					<div class="fractionGroup">
+						<label for="contactName">
+							Your name:
+						</label>
+						<input name="contactName"/>
+						<label for="contactEmail">
+							Your email address:
+						</label>
+						<input name="contactEmail"/>
+					</div>
+					<label for="contactBody">
+						Your message:
+					</lable>
+					<textarea name="contactBody"></textarea>
+					<button>
+						Send
+					</button>
+				</div>
+			</div>
 		</div>
 	</body>
 <html>
