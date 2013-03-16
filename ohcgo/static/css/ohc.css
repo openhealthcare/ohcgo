@@ -62,36 +62,14 @@ article, header {
 	position: relative;
 }
 
-.twitter,
 .footer {
 	background: #1d1d1b;
 	color: #f4b119;
 	overflow: hidden;
 }
 
-.footer {
-	bottom: 0;
-	font-size: 1.25em;
-	position: absolute;
-	width: 100%;
-}
-
-.twitter a,
 .footer a {
 	color: inherit;
-}
-
-.twitter p,
-.footer p {
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-}
-
-.twitter p:before {
-	display: inline-block;
-	content: url(../img/twitter.png);
-	margin-right: .5em;
 }
 
 .contentWrap {
@@ -169,11 +147,6 @@ header li a {
 	margin: auto;
 	max-width: 100em;
 	text-align: left;
-}
-
-.twitter .contentWrap,
-.footer .contentWrap {
-	text-align: center;
 }
 
 h1 {
@@ -292,7 +265,7 @@ body article .person p {
 		content: ' ';
 		display: block;
 		height: 20em;
-		left: 0;
+		left: -1em;
 		overflow: hidden;
 		position: absolute;
 		top: -10em;
@@ -304,7 +277,7 @@ body article .person p {
 	}
 
 	body.home        header .navWrap:before {
-		width: 33.33333%;
+		padding: 0 0 0 1em;
 	}
 
 	body.about       header .navWrap:before {
@@ -343,4 +316,33 @@ body article .person p {
 	background: rgba(244,177,25,.33);
 	margin: 0 0 1em;
 	padding: 1em;
+}
+
+/* Contact form */
+
+label,
+input,
+textarea {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	display: block;
+}
+
+.fractionGroup label,
+.fractionGroup input {
+	border-left: 1em transparent;
+}
+
+input,
+textarea {
+	background: hsla(0,0%,100%,.33333);
+}
+
+textarea {
+	width: 100%;
+}
+
+button {
+
 }
