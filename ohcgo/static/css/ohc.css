@@ -21,6 +21,10 @@ body {
 	white-space: nowrap;
 }
 
+.relative {
+	position: relative;
+}
+
 a {
 	color: #5e5ed0;
 }
@@ -332,12 +336,16 @@ textarea {
 input,
 textarea {
 	background: hsla(0,0%,100%,.12555);
+	color: #fff;
+	font: inherit;
 	width: 100%;
 }
 
 button {
 	background: #f4b119;
+	border: none;
 	color: #444;
+	vertical-align: middle;
 }
 
 textarea {
