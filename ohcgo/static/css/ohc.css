@@ -333,17 +333,19 @@ textarea {
 input,
 textarea {
 	background: hsla(0,0%,100%,.33333);
-}
-
-textarea {
-	border: 0 5em 0 0;
 	width: 100%;
 }
 
-button {
-	height: 100%;
-	position: absolute;
-	right: 0;
-	top: 0;
-	width: 4em;
+@media (min-width: 60em) {
+	textarea {
+		border: 0 5em 0 0;
+	}
+
+	button {
+		height: 100%;
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 4em;
+	}
 }
