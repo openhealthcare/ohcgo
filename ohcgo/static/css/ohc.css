@@ -327,11 +327,7 @@ textarea {
 	   -moz-box-sizing: border-box;
 	        box-sizing: border-box;
 	display: block;
-}
-
-.fractionGroup label,
-.fractionGroup input {
-	border-left: 1em transparent;
+	border: transparent;
 }
 
 input,
@@ -340,9 +336,14 @@ textarea {
 }
 
 textarea {
+	border: 0 5em 0 0;
 	width: 100%;
 }
 
 button {
-
+	height: 100%;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 4em;
 }
