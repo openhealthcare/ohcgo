@@ -71,6 +71,10 @@ article, header {
 	overflow: hidden;
 }
 
+.footer p:first-child {
+	margin-top: 0;
+}
+
 .footer a {
 	color: inherit;
 }
