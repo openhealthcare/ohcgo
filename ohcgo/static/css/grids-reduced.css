@@ -181,7 +181,7 @@
 		display:         box;
 	}
 
-	html.flexbox:nth-child(n):nth-child(n) .fractionGroup > * {
+	html.flexbox .fractionGroup > :nth-child(n):nth-child(n) {
 		float: none;
 		width: 0;
 	}
