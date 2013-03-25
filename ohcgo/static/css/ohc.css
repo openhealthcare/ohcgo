@@ -335,7 +335,7 @@ textarea {
 	   -moz-box-sizing: border-box;
 	        box-sizing: border-box;
 	display: block;
-	border: solid transparent;
+	border: 0 solid transparent;
 }
 
 input,
