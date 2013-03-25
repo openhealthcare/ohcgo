@@ -335,7 +335,7 @@ textarea {
 	   -moz-box-sizing: border-box;
 	        box-sizing: border-box;
 	display: block;
-	border: transparent;
+	border: solid transparent;
 }
 
 input,
@@ -365,7 +365,7 @@ textarea {
 
 @media (min-width: 60em) {
 	textarea {
-		border: 0 5em 0 0;
+		border: 0 35em 0 0;
 	}
 
 	button {
@@ -373,6 +373,6 @@ textarea {
 		position: absolute;
 		right: 0;
 		top: 0;
-		width: 4em;
+		width: 3em;
 	}
 }
