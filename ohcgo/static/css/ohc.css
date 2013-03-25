@@ -335,15 +335,17 @@ textarea {
 	   -moz-box-sizing: border-box;
 	        box-sizing: border-box;
 	display: block;
-	border: 0 solid transparent;
 }
 
 input,
 textarea {
 	background: hsla(0,0%,100%,.12555);
+	border: solid transparent;
+	border-width: 0 .25em;
 	color: #fff;
 	font: inherit;
 	margin: 0;
+	text-overflow: ellipsis;
 	width: 100%;
 }
 
