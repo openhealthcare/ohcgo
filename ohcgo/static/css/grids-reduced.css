@@ -5,7 +5,7 @@
 	}
 
 	/* Allow the specification of `fractionGroup.delineated` to have children border intelligently */
-	.delineated > * {
+	.delineated > * + * {
 		border-top: 1px solid;
 		padding-top: 1em;
 	}
@@ -49,80 +49,29 @@
 	.unit {
 		-webkit-box-sizing: border-box;
 		   -moz-box-sizing: border-box;
-	          box-sizing: border-box;
-		float:left;
-	}
-	.fractionGroup > :nth-child(1):nth-last-child(2),
-	.size1of2:nth-child(n):nth-child(n):nth-child(n) {
-		width:50%;
-	}
-	.fractionGroup > :nth-child(1):nth-last-child(3),
-	.fractionGroup > :nth-child(2):nth-last-child(2),
-	.size1of3:nth-child(n):nth-child(n):nth-child(n) {
-		width:33.33333%;
-	}
-	.fractionGroup > :nth-child(1):nth-last-child(4),
-	.fractionGroup > :nth-child(2):nth-last-child(3),
-	.fractionGroup > :nth-child(3):nth-last-child(2),
-	.size1of4:nth-child(n):nth-child(n):nth-child(n) {
-		width:25%;
-	}
-	.fractionGroup > :nth-child(1):nth-last-child(5),
-	.fractionGroup > :nth-child(2):nth-last-child(4),
-	.fractionGroup > :nth-child(3):nth-last-child(3),
-	.fractionGroup > :nth-child(4):nth-last-child(2),
-	.size1of5:nth-child(n):nth-child(n):nth-child(n) {
-		width:20%;
-	}
-	.fractionGroup > :last-child:last-child:last-child,
-	.lastUnit {
-		float:none;
-		width:auto;
-		_left:-3px;
-		_margin-right:-3px;
-		_position:relative;
-	}
-	.fractionGroup > :only-child {
-		float:none;
-		overflow:visible;
-	}
-}
-
-@media (min-width: 60em) {
-	/* Allow the specification of a `.fractionGroup` element to make its children occupy fractional widths */
-	.fractionGroup,
-	.fractionGroup > :nth-child(n+2):last-child {
-		overflow: hidden;
-		*overflow: visible;
-		*zoom:1;
-	}
-	.fractionGroup > *,
-	.unit {
-		-webkit-box-sizing: border-box;
-		   -moz-box-sizing: border-box;
 		        box-sizing: border-box;
 		float:left;
 	}
 	.fractionGroup > :nth-child(1):nth-last-child(2),
-	.size1of2:nth-child(n):nth-child(n):nth-child(n) {
+	.size1of2:nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
 		width:50%;
 	}
 	.fractionGroup > :nth-child(1):nth-last-child(3),
 	.fractionGroup > :nth-child(2):nth-last-child(2),
-	.size1of3:nth-child(n):nth-child(n):nth-child(n) {
+	.size1of3:nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
 		width:33.33333%;
 	}
 	.fractionGroup > :nth-child(1):nth-last-child(4),
 	.fractionGroup > :nth-child(2):nth-last-child(3),
 	.fractionGroup > :nth-child(3):nth-last-child(2),
-	.size1of4:nth-child(n):nth-child(n):nth-child(n) {
+	.size1of4:nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
 		width:25%;
 	}
 	.fractionGroup > :nth-child(1):nth-last-child(5),
 	.fractionGroup > :nth-child(2):nth-last-child(4),
 	.fractionGroup > :nth-child(3):nth-last-child(3),
 	.fractionGroup > :nth-child(4):nth-last-child(2),
-	.size1of5:nth-child(n):nth-child(n):nth-child(n) {
+	.size1of5:nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
 		width:20%;
 	}
 	.fractionGroup > :last-child:last-child:last-child,
