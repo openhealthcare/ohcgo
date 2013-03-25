@@ -121,15 +121,17 @@ header h1 span {
 /* Used to highlight current top level nav context */
 
 @media (max-width: 30em), not (width: 30em) {
-	body.home        nav a[href="/home"],
-	body.about       nav a[href="/about"],
-	body.tool        nav a[href="/tools"],
-	body.tools       nav a[href="/tools"],
-	body.hack-days   nav a[href="/hack"],
-	body.consultancy nav a[href="/consultancy"],
-	body.blog        nav a[href="/blog"] {
+	body.home        .nav a[href="/home"],
+	body.about       .nav a[href="/about"],
+	body.tool        .nav a[href="/tools"],
+	body.tools       .nav a[href="/tools"],
+	body.hack-days   .nav a[href="/hack"],
+	body.consultancy .nav a[href="/consultancy"],
+	body.blog        .nav a[href="/blog"] {
+		background: #fff;
 		border: solid #fff;
 		border-width: 0 2em;
+		color: #444;
 		margin: 0 -2em;
 	}
 }
