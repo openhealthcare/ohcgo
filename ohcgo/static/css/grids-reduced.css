@@ -53,25 +53,25 @@
 		float:left;
 	}
 	.fractionGroup > :nth-child(1):nth-last-child(2),
-	.size1of2:nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+	.size1of2:nth-child(n):nth-child(n):nth-child(n) {
 		width:50%;
 	}
 	.fractionGroup > :nth-child(1):nth-last-child(3),
 	.fractionGroup > :nth-child(2):nth-last-child(2),
-	.size1of3:nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+	.size1of3:nth-child(n):nth-child(n):nth-child(n) {
 		width:33.33333%;
 	}
 	.fractionGroup > :nth-child(1):nth-last-child(4),
 	.fractionGroup > :nth-child(2):nth-last-child(3),
 	.fractionGroup > :nth-child(3):nth-last-child(2),
-	.size1of4:nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+	.size1of4:nth-child(n):nth-child(n):nth-child(n) {
 		width:25%;
 	}
 	.fractionGroup > :nth-child(1):nth-last-child(5),
 	.fractionGroup > :nth-child(2):nth-last-child(4),
 	.fractionGroup > :nth-child(3):nth-last-child(3),
 	.fractionGroup > :nth-child(4):nth-last-child(2),
-	.size1of5:nth-child(n):nth-child(n):nth-child(n):nth-child(n) {
+	.size1of5:nth-child(n):nth-child(n):nth-child(n) {
 		width:20%;
 	}
 	.fractionGroup > :last-child:last-child:last-child,
@@ -133,5 +133,31 @@
 	html.flexbox .fractionGroup > :nth-child(n):nth-child(n) {
 		float: none;
 		width: 0;
+	}
+
+	html.flexbox [class*=size2of]:nth-child(n):nth-child(n) {
+		-webkit-box-flex: 2;
+		   -moz-box-flex: 2;
+		    -ms-box-flex: 2;
+		     -o-box-flex: 2;
+		        box-flex: 2;
+		    -webkit-flex: 2;
+		       -moz-flex: 2;
+		        -ms-flex: 2;
+		         -o-flex: 2;
+		            flex: 2;
+	}
+
+	html.flexbox [class*=size3of]:nth-child(n):nth-child(n) {
+		-webkit-box-flex: 3;
+		   -moz-box-flex: 3;
+		    -ms-box-flex: 3;
+		     -o-box-flex: 3;
+		        box-flex: 3;
+		    -webkit-flex: 3;
+		       -moz-flex: 3;
+		        -ms-flex: 3;
+		         -o-flex: 3;
+		            flex: 3;
 	}
 }
