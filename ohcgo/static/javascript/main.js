@@ -22,7 +22,7 @@ void function initOHC($){
 			$clone.appendTo('body');
 
 			// Bind events that can potentially resolve in changed content
-			$textarea.on('change cut drop keydown paste', function waitForInputResolution(event){
+			$textarea.on('change cut drop keydown paste', $.throttle(100, function waitForInputResolution(event){
 				// Execute in 0 ms allows the stack to clear and the native event to resolve, so the test can react to user input
 				setTimeout(function regulateHeight(){
 					if($clone.val() !== $textarea.val()){
@@ -33,7 +33,7 @@ void function initOHC($){
 						}
 					}
 				}, 0);
-			});
+			}));
 		});
 	});
 }(jQuery);
