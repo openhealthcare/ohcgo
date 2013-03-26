@@ -122,7 +122,7 @@ header h1 span {
 
 /* Used to highlight current top level nav context */
 
-@media (max-width: 30em), not (width: 30em) {
+@media (max-width: 60em) {
 	body.home        .nav a[href="/home"],
 	body.about       .nav a[href="/about"],
 	body.tool        .nav a[href="/tools"],
@@ -138,18 +138,12 @@ header h1 span {
 	}
 }
 
-header ul {
+.nav {
 	background: #1d1d1b;
 	color: #f4b119;
-	margin: 0;
-	padding: 0;
 }
 
-header li {
-	list-style: none;
-}
-
-header li a {
+.nav a {
 	line-height: 1;
 	padding: 1em;
 }
@@ -250,7 +244,7 @@ body article .person p {
 		font-weight: 600;
 	}
 
-	header li a {
+	.nav a {
 		font-size: 1.5em;
 	}
 
@@ -314,7 +308,7 @@ body article .person p {
 	}
 
 	header .colophon,
-	header ul {
+	.nav {
 		position: relative;
 	}
 
