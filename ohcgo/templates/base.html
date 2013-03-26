@@ -74,38 +74,28 @@
 							</a>
 						</h1>
 					</div>
-					<ul class="nav size2of3 fractionGroup">
-						<!--
-							The url tag is a reverse
-							lookup on the routes in urls.py on
-							the name keyword
-						-->
-						<li>
-							<a href="{% url about %}">
-								About
-							</a>
-						</li>
-						<li>
-							<a href="{% url products %}">
-								Tools
-							</a>
-						</li>
-						<li>
-							<a href="{% url hackdays %}">
-								Hack Days
-							</a>
-						</li>
-						<li>
-							<a href="{% url consultancy %}">
-								Consultancy
-							</a>
-						</li>
-						<li class="lastUnit">
-							<a href="#">
-								Blog
-							</a>
-						</li>
-					</ul>
+					<div class="nav size2of3 fractionGroup">
+					<!--
+						The url tag is a reverse
+						lookup on the routes in urls.py on
+						the name keyword
+					-->
+						<a href="{% url about %}">
+							About
+						</a>
+						<a href="{% url products %}">
+							Tools
+						</a>
+						<a href="{% url hackdays %}">
+							Hack Days
+						</a>
+						<a href="{% url consultancy %}">
+							Consultancy
+						</a>
+						<a href="#">
+							Blog
+						</a>
+					</div>
 				</div>
 			</div>
 		</header>
