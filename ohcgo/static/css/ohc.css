@@ -77,6 +77,7 @@ article, header {
 
 .footer a {
 	color: inherit;
+	color: expression(this.parentNode.currentStyle['color'] || 'inherit');
 }
 
 .contentWrap {
@@ -93,6 +94,7 @@ header {
 
 header a {
 	color: inherit;
+	color: expression(this.parentNode.currentStyle['color'] || 'inherit');
 	display: block;
 	text-decoration: none;
 }
@@ -346,6 +348,7 @@ textarea {
 	border-width: 0 .25em;
 	color: #fff;
 	font: inherit;
+	font: expression(this.parentNode.currentStyle['font'] || 'inherit');
 	margin: 0;
 	text-overflow: ellipsis;
 	width: 100%;
