@@ -19,7 +19,7 @@
 			// Give CSS-readable feedback of the fact that the page is scripted, and the page is loading
 			void function loadWait(h,c){
 				h[c]   = h[c].replace('un','loading ');
-				onload = setTimeout(function removeLoadingClass(){
+				window.onload = setTimeout(function removeLoadingClass(){
 					h[c] = h[c].replace('loading','loaded')
 				},500);
 			}(document.lastChild,'className');
