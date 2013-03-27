@@ -143,7 +143,7 @@ header h1 span {
 	color: #f4b119;
 }
 
-.nav a {
+.navWrap .nav a {
 	line-height: 1;
 	padding: 1em;
 }
@@ -309,6 +309,7 @@ body article .person p {
 
 	header .colophon,
 	.nav {
+		padding: 0;
 		position: relative;
 	}
 
