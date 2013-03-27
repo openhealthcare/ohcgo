@@ -9,7 +9,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.contrib import admin
 admin.autodiscover()
 
-from ohcgo.views import Home, Tools
+from ohcgo.views import Home, Tools, ContactView
 from ohcgo.products.models import Product
 
 urlpatterns = patterns(
@@ -24,9 +24,12 @@ urlpatterns = patterns(
     url(r'^tool/(?P<pk>\d+)/?$', DetailView.as_view(model=Product,
                                                        template_name="tool_detail.html"),
         name='tool_detail'),
-    # Examples:
-    # url(r'^$', 'ohcgo.views.home', name='home'),
-    # url(r'^ohcgo/', include('ohcgo.foo.urls')),
+
+
+    # Contact Form
+    url(r'^contact/?$', ContactView.as_view(), name='contact'),
+    url(r'^contact/ta$', TemplateView.as_view(template_name='contact_ta.html'),
+        name='contact-ta'),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', nclude('django.contrib.admindocs.urls')),

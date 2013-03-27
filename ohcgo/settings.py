@@ -1,9 +1,9 @@
-# Django settings for ohcgo project.
-import dj_database_url
 
 #import ffs
 #ROOT = ffs.Path(__file__).paren
 import os
+import dj_database_url
+
 ROOT = os.path.abspath(os.path.dirname(__file__))
 
 # ROOT = "C:/Users/Barney/Documents/GitHub/ohcgo"
@@ -159,3 +159,15 @@ LOGGING = {
         },
     }
 }
+
+
+# Application settings
+CONTACT_EMAIL = 'david@openhealthcare.org.uk'
+DEFAULT_FROM_EMAIL ='david@openhealthcare.org.uk'
+EMAIL_HOST_USER = os.environ.get('SENDGRID_USERNAME', '')
+EMAIL_HOST_PASSWORD = os.environ.get('SENDGRID_PASSWORD', '')
+
+try:
+    from local_settings import *
+except:
+    pass
