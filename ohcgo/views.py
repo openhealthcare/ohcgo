@@ -28,7 +28,10 @@ class Home(TemplateView):
         try:
             context['featured'] = Product.objects.filter(featured=True)[0]
         except IndexError:
-            context['featured'] = context['products'][0]
+            if len(context['products']) < 1:
+                context['featured'] = []
+            else:
+                context['featured'] = context['products'][0]
         return context
 
 class Tools(TemplateView):
