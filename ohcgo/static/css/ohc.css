@@ -77,7 +77,6 @@ article, header {
 
 .footer a {
 	color: inherit;
-	color: expression(this.parentNode.currentStyle['color'] || 'inherit');
 }
 
 .contentWrap {
@@ -94,7 +93,6 @@ header {
 
 header a {
 	color: inherit;
-	color: expression(this.parentNode.currentStyle['color'] || 'inherit');
 	display: block;
 	text-decoration: none;
 }
@@ -127,7 +125,7 @@ header h1 span {
 	body.about       .nav a[href="/about"],
 	body.tool        .nav a[href="/tools"],
 	body.tools       .nav a[href="/tools"],
-	body.hack-days   .nav a[href="/hack"],
+	body.hack-days   .nav a[href="/hack-days"],
 	body.consultancy .nav a[href="/consultancy"],
 	body.blog        .nav a[href="/blog"] {
 		background: #fff;
@@ -136,6 +134,11 @@ header h1 span {
 		color: #444;
 		margin: 0 -2em;
 	}
+
+	button {
+		padding: .25em;
+		width: 100%;
+	}
 }
 
 .nav {
@@ -143,7 +146,7 @@ header h1 span {
 	color: #f4b119;
 }
 
-.nav a {
+.navWrap .nav a {
 	line-height: 1;
 	padding: 1em;
 }
@@ -309,6 +312,7 @@ body article .person p {
 
 	header .colophon,
 	.nav {
+		padding: 0;
 		position: relative;
 	}
 
@@ -342,7 +346,6 @@ textarea {
 	border-width: 0 .25em;
 	color: #fff;
 	font: inherit;
-	font: expression(this.parentNode.currentStyle['font'] || 'inherit');
 	margin: 0;
 	text-overflow: ellipsis;
 	width: 100%;
@@ -366,7 +369,7 @@ textarea {
 
 @media (min-width: 60em) {
 	textarea {
-		border-width: 0 3em 0 0;
+		border-right-width: 4em;
 	}
 
 	button {
@@ -374,6 +377,6 @@ textarea {
 		position: absolute;
 		right: 0;
 		top: 0;
-		width: 3em;
+		width: 4em;
 	}
 }
