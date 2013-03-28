@@ -26,7 +26,6 @@ urlpatterns = patterns(
                                                        template_name="tool_detail.html"),
         name='tool_detail'),
 
-
     # Contact Form
     url(r'^contact/?$', ContactView.as_view(), name='contact'),
     url(r'^contact/ta$', TemplateView.as_view(template_name='contact_ta.html'),
@@ -35,6 +34,10 @@ urlpatterns = patterns(
     # Blog
     url(r'^blog/', include('zinnia.urls')),
     url(r'^comments/', include('django.contrib.comments.urls')),
+
+    url(r'^login/$', 'django_cas.views.login', name='login'),
+    url(r'^accounts/login/$', 'django_cas.views.login'),
+    url(r'^logout/$', 'django_cas.views.logout', name='logout'),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', nclude('django.contrib.admindocs.urls')),

@@ -106,6 +106,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_cas.middleware.CASMiddleware',
 )
 
 ROOT_URLCONF = 'ohcgo.urls'
@@ -122,6 +123,12 @@ TEMPLATE_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
 )
 
+AUTHENTICATION_BACKENDS = (
+    # Needed to login by username in Django admin, regardless of `allauth`
+    "django.contrib.auth.backends.ModelBackend",
+    'django_cas.backends.CASBackend',
+)
+
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -135,6 +142,7 @@ INSTALLED_APPS = (
     'grappelli',
     'django.contrib.admin',
 
+    'django_cas',
     'django_extensions',
     'mptt',
     'south',
@@ -183,6 +191,13 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.environ.get('SENDGRID_USERNAME', '')
 EMAIL_HOST_PASSWORD = os.environ.get('SENDGRID_PASSWORD', '')
+
+# AUTHS
+CAS_SERVER_URL = 'http://auth.openhealthcare.org.uk'
+CAS_REDIRECT_URL = '/'
+CAS_IGNORE_REFERER = True
+CAS_AUTO_CREATE_USERS = True
+
 
 try:
     from local_settings import *
