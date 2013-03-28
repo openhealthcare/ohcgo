@@ -114,7 +114,7 @@
                                   {% csrf_token %} <!-- We need this to accept POST. -->
 					<div>
 						<p>
-							Find us on twitter <a href="http://www.twitter.com/ohcuk">@ohcuk</a>, send an email to <a href="mailto:hello@openhealthcare.org.uk">hello@openhealthcare.org.uk</a>, or fill in the following form to get in touch.
+							Find us on twitter <a href="http://www.twitter.com/ohcuk">@ohcuk</a>, send an email to <a href="mailto:hello@openhealthcare.org.uk">hello@openhealthcare.org.uk</a>, or fill in the following form:
 						</p>
 					</div>
 					<div>
@@ -122,17 +122,17 @@
 							<label for="name">
 								Your name:
 							</label>
-							<input name="name"/>
+							<input name="name" required/>
 						</div>
 						<div class="fractionGroup">
 							<label for="email">
 								Your email address:
 							</label>
-							<input name="email"/>
+							<input name="email" required type="email" />
 						</div>
 					</div>
 					<div class="relative">
-						<textarea name="message"></textarea>
+						<textarea name="message" placeholder="Dear OHC&#133;" required></textarea>
 						<button>
 							Send
 						</button>
