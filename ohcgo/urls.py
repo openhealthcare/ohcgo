@@ -31,6 +31,10 @@ urlpatterns = patterns(
     url(r'^contact/ta$', TemplateView.as_view(template_name='contact_ta.html'),
         name='contact-ta'),
 
+    # Blog
+    url(r'^blog/', include('zinnia.urls')),
+    url(r'^comments/', include('django.contrib.comments.urls')),
+
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', nclude('django.contrib.admindocs.urls')),
     (r'^grappelli/', include('grappelli.urls')),
