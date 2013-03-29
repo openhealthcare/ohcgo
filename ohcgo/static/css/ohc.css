@@ -1,5 +1,15 @@
-/* Loading style: hide until we're ready; */
+ghost {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
 
+/* Loading style: hide until we're ready; */
 html.loading body {
 	visibility: hidden;
 }
@@ -402,4 +412,31 @@ textarea {
 		top: 0;
 		width: 4em;
 	}
+}
+
+[data-condition] {
+	overflow: hidden;
+	position: relative;
+}
+
+[data-conditional] {
+	background: #fff;
+	background: #rgba(255,255,255,.75);
+	bottom: 100%;
+	color: rgba(63.75,63.75,63.75,0);
+	height: 100%;
+	overflow: hidden;
+	position: absolute;
+	width: 100%;
+	-webkit-transition: .3s ease-in-out;
+	   -moz-transition: .3s ease-in-out;
+	    -ms-transition: .3s ease-in-out;
+	     -o-transition: .3s ease-in-out;
+	        transition: .3s ease-in-out;
+}
+
+[data-condition="success"] [data-conditional="success"],
+[data-condition="failure"] [data-conditional="failure"] {
+	bottom: 0;
+	color: #444;
 }

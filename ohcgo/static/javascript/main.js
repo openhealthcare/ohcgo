@@ -1,9 +1,17 @@
 void function initOHC($){
-	// Expand textareas to contain user input
-	$(function initDynamicTextareas(){
-		$ghost = $('<ghost/>').appendTo('body');
+	// Render script-only markup islands
+	$(function renderIslands(){
+		$('[type=markup]').each(function renderIsland(){
+			$(this).replaceWith($(this).html());
+		});
+	});
 
-		$('textarea').each(function(){
+	// Expand textareas to contain user input
+	$(function dynamizeTextareas(){
+		// For our hidden DOM needs
+		var $ghost = $('<ghost/>').appendTo('body');
+
+		$('textarea').each(function dynamizeTextarea(){
 			var $textarea = $(this);
 			// Reference to determine content-based height
 			var $clone    = $textarea.clone();
@@ -39,5 +47,72 @@ void function initOHC($){
 				}, 0);
 			}));
 		});
+	});
+
+	// Dynamic form submission
+	/*
+	// Broken! Filtering out XHR requests?
+	$(function formSubmission(){
+		var $form = $('form');
+
+		function Feedback(success){
+			return function feedback(){
+				$form.attr('data-condition', success ? 'success' : 'failure');
+			}
+		}
+
+		function resolve(){
+			$form.attr('data-condition', false);
+		}
+
+		$form.on('submit', function captureSubmit(e){
+			e.preventDefault();
+
+			$.ajax({
+				method  : 'post',
+				url     : $form.attr('action'),
+				success : Feedback(true),
+				error   : Feedback(false)
+			});
+		});
+	});
+	*/
+
+	// Fallback. Ugly.
+	$(function formSubmission(){
+		var $form     = $('form');
+		var $ghost    = $('<ghost/>');
+		var $listener = $('<iframe/>');
+
+		function Feedback(success){
+			return function feedback(e){
+				debugger;
+				$form.attr('data-condition', success ? 'success' : 'failure');
+			}
+		}
+
+		function resolve(){
+			$form.attr('data-condition', false);
+		}
+
+		$form.attr({
+			target : 'listener'
+		});
+
+		$ghost.appendTo('body');
+
+		$listener
+			.attr({
+				name     : 'listener',
+				tabindex : -1,
+				hidden   : true
+			})
+			.on({
+				load  : Feedback(true),
+				error : Feedback(false)
+			})
+			.appendTo(
+				$ghost
+			);
 	});
 }(jQuery);
