@@ -420,8 +420,7 @@ textarea {
 }
 
 [data-conditional] {
-	background: #fff;
-	background: rgba(255,255,255,.75);
+	background: #f4b119;
 	bottom: 100%;
 	color: rgba(63.75,63.75,63.75,0);
 	height: 100%;

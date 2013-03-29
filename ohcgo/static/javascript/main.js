@@ -91,7 +91,6 @@ void function initOHC($){
 
 		function Feedback(success){
 			return function feedback(e){
-				debugger;
 				$form.attr('data-condition', success ? 'success' : 'failure');
 			}
 		}
@@ -111,16 +110,17 @@ void function initOHC($){
 		$listener
 			.attr({
 				name     : 'listener',
-				src      : 'about:blank',
 				tabindex : -1,
 				hidden   : true
 			})
-			.on({
-				load  : Feedback(true),
-				error : Feedback(false)
-			})
+			// iframes always load once, even if it's nothing:
+			// Nerf false positives
 			.one({
-				load  : noop
+				load     : noop
+			})
+			.on({
+				load     : Feedback(true),
+				error    : Feedback(false)
 			})
 			.appendTo(
 				$ghost
