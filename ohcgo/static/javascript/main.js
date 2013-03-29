@@ -1,4 +1,8 @@
 void function initOHC($){
+	function noop(){
+		return;
+	}
+
 	// Render script-only markup islands
 	$(function renderIslands(){
 		$('[type=markup]').each(function renderIsland(){
@@ -114,6 +118,9 @@ void function initOHC($){
 			.on({
 				load  : Feedback(true),
 				error : Feedback(false)
+			})
+			.one({
+				load  : noop
 			})
 			.appendTo(
 				$ghost

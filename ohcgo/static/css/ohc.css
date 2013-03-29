@@ -421,13 +421,14 @@ textarea {
 
 [data-conditional] {
 	background: #fff;
-	background: #rgba(255,255,255,.75);
+	background: rgba(255,255,255,.75);
 	bottom: 100%;
 	color: rgba(63.75,63.75,63.75,0);
 	height: 100%;
 	overflow: hidden;
 	position: absolute;
 	width: 100%;
+	z-index: 1;
 	-webkit-transition: .3s ease-in-out;
 	   -moz-transition: .3s ease-in-out;
 	    -ms-transition: .3s ease-in-out;
