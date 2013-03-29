@@ -29,7 +29,12 @@
 
 	.delineated > * {
 		border-right: 1px solid;
-		margin-right: -1px;
+		/* 
+		Necessity of importance is bizarre. 
+		It isn't naturally superseded, and some elements fare fine. 
+		Investigate further.
+		*/
+		margin-right: -1px !important;
 	}
 
 	.delineated > :last-child,
