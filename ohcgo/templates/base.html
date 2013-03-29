@@ -107,30 +107,34 @@
 		</div>
 		{% block content_after %}
 		{% endblock %}
-		<div class="footer">
+		<form  action="/contact/" method="POST" class="footer">
 			<script type="markup">
-				<div class="response" data-scenario="success">
-					<h2>
-						Oops!
-					</h2>
-					<p>
-						Something went wrong. Come back later and try again, or use another means of communication.
-					</p>
+				<div class="response" data-conditional="success">
+					<div class="contentWrap">
+						<h2>
+							Thanks!
+						</h2>
+						<p>
+							Something went wrong. Come back later and try again, or use another means of communication.
+						</p>
+					</div>
 					<a href="#">OK</a>
 				</div>
-				<div class="response" data-scenario="failure">
-					<h2>
-						Oops!
-					</h2>
-					<p>
-						Something went wrong. Come back later and try again, or use another means of communication.
-					</p>
+				<div class="response" data-conditional="failure">
+					<div class="contentWrap">
+						<h2>
+							Thanks!
+						</h2>
+						<p>
+							Something went wrong. Come back later and try again, or use another means of communication.
+						</p>
+					</div>
 					<a href="#">OK</a>
 				</div>
 			</script>
 			<div class="contentWrap">
 				<h2>Get in touch with OHC</h2>
-				<form action="/contact/" method="POST" class="fractionGroup">
+				<div class="fractionGroup">
 					{% csrf_token %} <!-- We need this to accept POST. -->
 					<div>
 						<p>
@@ -159,6 +163,6 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</form>
 	</body>
 <html>

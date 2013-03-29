@@ -69,7 +69,7 @@ void function initOHC($){
 			e.preventDefault();
 
 			$.ajax({
-				method  : 'post',
+				method  : $form.attr('method'),
 				url     : $form.attr('action'),
 				success : Feedback(true),
 				error   : Feedback(false)
@@ -80,9 +80,10 @@ void function initOHC($){
 
 	// Fallback. Ugly.
 	$(function formSubmission(){
-		var $form     = $('form');
-		var $ghost    = $('<ghost/>');
-		var $listener = $('<iframe/>');
+		var $form        = $('form');
+		var $ghost       = $('<ghost/>');
+		var $listener    = $('<iframe/>');
+		var $acknowledge = $('[data-conditional] a');
 
 		function Feedback(success){
 			return function feedback(e){
@@ -91,7 +92,9 @@ void function initOHC($){
 			}
 		}
 
-		function resolve(){
+		function resolve(e){
+			e.preventDefault();
+
 			$form.attr('data-condition', false);
 		}
 
@@ -115,5 +118,7 @@ void function initOHC($){
 			.appendTo(
 				$ghost
 			);
+
+		$acknowledge.on('click', resolve)
 	});
 }(jQuery);
