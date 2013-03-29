@@ -1,6 +1,6 @@
 void function initOHC($){
-	function noop(){
-		return;
+	function noop(e){
+		e.stopImmediatePropagation();
 	}
 
 	// Render script-only markup islands
@@ -110,6 +110,7 @@ void function initOHC($){
 		$listener
 			.attr({
 				name     : 'listener',
+				src      : 'about:blank',
 				tabindex : -1,
 				hidden   : true
 			})
