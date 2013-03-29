@@ -41,8 +41,7 @@ a:focus,
 .link {
 	background: #bcbcda;
 	background: rgba(60,60,150,.3333);
-	box-shadow: 0 0 1em  rgba(60,60,150,.3333),
-	            0 0 .5em rgba(60,60,150,.3333);
+	box-shadow: 0 0 1em  rgba(60,60,150,.3333);
 	cursor: pointer;
 }
 
