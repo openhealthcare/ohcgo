@@ -86,6 +86,7 @@ article, header {
 	background: #1d1d1b;
 	color: #f4b119;
 	overflow: hidden;
+	padding: 0 0 4em;
 }
 
 .footer p:first-child {

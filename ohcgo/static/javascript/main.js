@@ -1,8 +1,4 @@
 void function initOHC($){
-	function noop(e){
-		e.stopImmediatePropagation();
-	}
-
 	// Render script-only markup islands
 	$(function renderIslands(){
 		$('[type=markup]').each(function renderIsland(){
