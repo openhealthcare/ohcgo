@@ -1,9 +1,9 @@
-# Django settings for ohcgo project.
-import dj_database_url
 
 #import ffs
 #ROOT = ffs.Path(__file__).paren
 import os
+import dj_database_url
+
 ROOT = os.path.abspath(os.path.dirname(__file__))
 
 # ROOT = "C:/Users/Barney/Documents/GitHub/ohcgo"
@@ -89,6 +89,15 @@ TEMPLATE_LOADERS = (
 #     'django.template.loaders.eggs.Loader',
 )
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.core.context_processors.debug',
+    "django.core.context_processors.request",
+    'django.core.context_processors.static',
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+)
+
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -97,6 +106,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_cas.middleware.CASMiddleware',
 )
 
 ROOT_URLCONF = 'ohcgo.urls'
@@ -113,6 +123,12 @@ TEMPLATE_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
 )
 
+AUTHENTICATION_BACKENDS = (
+    # Needed to login by username in Django admin, regardless of `allauth`
+    "django.contrib.auth.backends.ModelBackend",
+    'django_cas.backends.CASBackend',
+)
+
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -121,13 +137,18 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.markup',
+    'django.contrib.comments',
+
     'grappelli',
-    'django_extensions',
-    # Uncomment the next line to enable the admin:
     'django.contrib.admin',
-    # Uncomment the next line to enable admin documentation:
-    # 'django.contrib.admindocs',
+
+    'django_cas',
+    'django_extensions',
+    'mptt',
     'south',
+    'tagging',
+    'zinnia',
+
     'ohcgo.products',
 )
 
@@ -159,3 +180,26 @@ LOGGING = {
         },
     }
 }
+
+
+# Application settings
+EMAIL_BACKEND = os.environ.get('EMAIL_BACKEND', 'django.core.mail.backends.smtp.EmailBackend')
+CONTACT_EMAIL = 'david@openhealthcare.org.uk'
+DEFAULT_FROM_EMAIL ='david@openhealthcare.org.uk'
+EMAIL_HOST= 'smtp.sendgrid.net'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.environ.get('SENDGRID_USERNAME', '')
+EMAIL_HOST_PASSWORD = os.environ.get('SENDGRID_PASSWORD', '')
+
+# AUTHS
+CAS_SERVER_URL = 'http://auth.openhealthcare.org.uk'
+CAS_REDIRECT_URL = '/'
+CAS_IGNORE_REFERER = True
+CAS_AUTO_CREATE_USERS = True
+
+
+try:
+    from local_settings import *
+except:
+    pass

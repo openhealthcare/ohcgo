@@ -1,10 +1,14 @@
 """
 Base Views for the OHC Django site
 """
+from django.core.urlresolvers import reverse_lazy
 from django.views.generic import TemplateView
+from django.views.generic.edit import FormView
 
 from ohcgo import feeds
+from ohcgo.forms import ContactForm
 from ohcgo.products.models import Product
+
 
 class Home(TemplateView):
     """
@@ -28,8 +32,12 @@ class Home(TemplateView):
         try:
             context['featured'] = Product.objects.filter(featured=True)[0]
         except IndexError:
-            context['featured'] = context['products'][0]
+            if len(context['products']) < 1:
+                context['featured'] = []
+            else:
+                context['featured'] = context['products'][0]
         return context
+
 
 class Tools(TemplateView):
     """
@@ -50,3 +58,19 @@ class Tools(TemplateView):
         context['insight'] = Product.objects.filter(category=Product.INSIGHT)
         context['doctors'] = Product.objects.filter(category=Product.DOCTORS)
         return context
+
+
+class ContactView(FormView):
+    """
+    Pointless form for people who don't like their email clients
+    """
+    template_name = 'contact.html'
+    form_class    = ContactForm
+    success_url   = reverse_lazy('contact-ta')
+
+    def form_valid(self, form):
+        """
+        Praise be, someone has spammed us.
+        """
+        form.send_email()
+        return super(ContactView, self).form_valid(form)

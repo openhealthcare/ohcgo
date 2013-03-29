@@ -2,3 +2,4 @@ build
 Thumbs.db
 *.pyc
 ohcgo.db
+/ohcgo/local_settings.py
