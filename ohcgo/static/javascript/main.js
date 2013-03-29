@@ -89,7 +89,9 @@ void function initOHC($){
 			// iframes always load once, even if it's nothing:
 			// Nerf the inevitable first false positive
 			.one({
-				load     : function(){return false}
+				load     : function(e){
+					e.stopImmediatePropagation();
+				}
 			})
 			.on({
 				load     : Feedback(true),
