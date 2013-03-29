@@ -77,7 +77,6 @@ article, header {
 
 .footer a {
 	color: inherit;
-	color: expression(this.parentNode.currentStyle['color'] || 'inherit');
 }
 
 .contentWrap {
@@ -94,7 +93,6 @@ header {
 
 header a {
 	color: inherit;
-	color: expression(this.parentNode.currentStyle['color'] || 'inherit');
 	display: block;
 	text-decoration: none;
 }
@@ -115,8 +113,14 @@ header h1 img {
 }
 
 header h1 span {
+	bottom: -.15em;
 	display: inline-block;
+	left: 2.25em;
+	line-height: 1.1;
 	overflow: hidden;
+	position: absolute;
+	right: 0;
+	white-space: normal;
 }
 
 
@@ -127,7 +131,7 @@ header h1 span {
 	body.about       .nav a[href="/about"],
 	body.tool        .nav a[href="/tools"],
 	body.tools       .nav a[href="/tools"],
-	body.hack-days   .nav a[href="/hack"],
+	body.hack-days   .nav a[href="/hack-days"],
 	body.consultancy .nav a[href="/consultancy"],
 	body.blog        .nav a[href="/blog"] {
 		background: #fff;
@@ -135,6 +139,11 @@ header h1 span {
 		border-width: 0 2em;
 		color: #444;
 		margin: 0 -2em;
+	}
+
+	button {
+		padding: .25em;
+		width: 100%;
 	}
 }
 
@@ -343,7 +352,6 @@ textarea {
 	border-width: 0 .25em;
 	color: #fff;
 	font: inherit;
-	font: expression(this.parentNode.currentStyle['font'] || 'inherit');
 	margin: 0;
 	text-overflow: ellipsis;
 	width: 100%;
@@ -367,7 +375,7 @@ textarea {
 
 @media (min-width: 60em) {
 	textarea {
-		border-width: 0 3em 0 0;
+		border-right-width: 4em;
 	}
 
 	button {
@@ -375,6 +383,6 @@ textarea {
 		position: absolute;
 		right: 0;
 		top: 0;
-		width: 3em;
+		width: 4em;
 	}
 }

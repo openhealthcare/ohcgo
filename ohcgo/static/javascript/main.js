@@ -1,6 +1,8 @@
 void function initOHC($){
 	// Expand textareas to contain user input
 	$(function initDynamicTextareas(){
+		$ghost = $('<ghost/>').appendTo('body');
+
 		$('textarea').each(function(){
 			var $textarea = $(this);
 			// Reference to determine content-based height
@@ -19,19 +21,21 @@ void function initOHC($){
 				visibility : 'hidden'
 			});
 
-			$clone.appendTo('body');
-
 			// Bind events that can potentially resolve in changed content
 			$textarea.on('change cut drop keydown paste', $.throttle(100, function waitForInputResolution(event){
 				// Execute in 0 ms allows the stack to clear and the native event to resolve, so the test can react to user input
 				setTimeout(function regulateHeight(){
-					if($clone.val() !== $textarea.val()){
-						$clone.val($textarea.val());
-
-						if($clone[0].scrollHeight !== $textarea[0].clientHeight){
-							$textarea.css('height', $clone[0].scrollHeight);
-						}
+					if($clone.val() === $textarea.val()){
+						return;
 					}
+
+					$clone.val($textarea.val()).appendTo($ghost);
+
+					if($clone[0].scrollHeight !== $textarea[0].clientHeight){
+						$textarea.css('height', $clone[0].scrollHeight);
+					}
+
+					$clone.remove();
 				}, 0);
 			}));
 		});
