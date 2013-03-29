@@ -88,8 +88,8 @@
 	}
 
 	/* Flexbox overrides: allows full secondary axis occupancy; */
-	html.flexbox .fractionGroup,
-	html.flexbox .fractionGroup > * {
+	html.flexbox .fractionGroup:nth-child(n):nth-child(n),
+	html.flexbox .fractionGroup:nth-child(n):nth-child(n) > * {
 		-webkit-box-flex: 1;
 		   -moz-box-flex: 1;
 		    -ms-box-flex: 1;
@@ -100,6 +100,7 @@
 		        -ms-flex: 1;
 		         -o-flex: 1;
 		            flex: 1;
+		overflow: visible;
 	}
 
 	html.flexbox .fractionGroup {
