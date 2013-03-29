@@ -1,5 +1,6 @@
 void function initOHC($){
-	// Render script-only markup islands
+	// Render script-only markup islands.
+	// Like form feedback messages.
 	$(function renderIslands(){
 		$('[type=markup]').each(function renderIsland(){
 			$(this).replaceWith($(this).html());
@@ -49,42 +50,16 @@ void function initOHC($){
 		});
 	});
 
-	// Dynamic form submission
-	/*
-	// Broken! Filtering out XHR requests?
-	$(function formSubmission(){
-		var $form = $('form');
-
-		function Feedback(success){
-			return function feedback(){
-				$form.attr('data-condition', success ? 'success' : 'failure');
-			}
-		}
-
-		function resolve(){
-			$form.attr('data-condition', false);
-		}
-
-		$form.on('submit', function captureSubmit(e){
-			e.preventDefault();
-
-			$.ajax({
-				method  : $form.attr('method'),
-				url     : $form.attr('action'),
-				success : Feedback(true),
-				error   : Feedback(false)
-			});
-		});
-	});
-	*/
-
-	// Fallback. Ugly.
+	// The server side handler doesn't like XHR, apparently.
+	// As a result we have to do some clever stuff with iframes.
 	$(function formSubmission(){
 		var $form        = $('form');
 		var $ghost       = $('<ghost/>');
 		var $listener    = $('<iframe/>');
 		var $acknowledge = $('[data-conditional] a');
 
+		// Give an indicator of state in markup.
+		// CSS governs appearance, HTML content.
 		function Feedback(success){
 			return function feedback(e){
 				$form.attr('data-condition', success ? 'success' : 'failure');
@@ -97,8 +72,9 @@ void function initOHC($){
 			$form.attr('data-condition', false);
 		}
 
+		// Bind attributes & events, attach to DOM 
 		$form.attr({
-			target : 'listener'
+			target     : 'listener'
 		});
 
 		$ghost.appendTo('body');
@@ -111,9 +87,9 @@ void function initOHC($){
 				hidden   : true
 			})
 			// iframes always load once, even if it's nothing:
-			// Nerf false positives
+			// Nerf the inevitable first false positive
 			.one({
-				load     : noop
+				load     : function(){return false}
 			})
 			.on({
 				load     : Feedback(true),
