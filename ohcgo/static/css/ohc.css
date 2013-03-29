@@ -113,16 +113,9 @@ header h1 img {
 }
 
 header h1 span {
-	bottom: -.15em;
 	display: inline-block;
-	left: 2.25em;
-	line-height: 1.1;
 	overflow: hidden;
-	position: absolute;
-	right: 0;
-	white-space: normal;
 }
-
 
 /* Used to highlight current top level nav context */
 
@@ -225,7 +218,6 @@ body article .person p {
 /* Only if we have the available width */
 
 @media (min-width: 30em) {
-
 	header {
 		padding-top: 5em;
 	}
@@ -242,7 +234,6 @@ body article .person p {
 }
 
 @media (min-width: 60em) {
-
 	header {
 		margin-bottom: 5em;
 		white-space: nowrap;
@@ -265,6 +256,19 @@ body article .person p {
 		overflow: hidden;
 		*overflow: visible;
 		*zoom: 1;
+	}
+
+	header h1 img {
+		float: left;
+	}
+
+	header h1 span {
+		bottom: -.15em;
+		left: 2.25em;
+		line-height: 1.1;
+		position: absolute;
+		right: 0;
+		white-space: normal;
 	}
 
 	/* Used to highlight current top level nav context */
