@@ -104,6 +104,7 @@ void function initOHC($){
 		$listener
 			.attr({
 				name     : 'listener',
+				src      : 'about:blank',
 				tabindex : -1,
 				hidden   : true
 			})
