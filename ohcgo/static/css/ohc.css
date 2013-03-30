@@ -137,7 +137,7 @@ header h1 span {
 
 /* Used to highlight current top level nav context */
 
-@media (max-width: 60em) {
+@media (max-width: 50em) {
 	body.home        .nav a[href="/home"],
 	body.about       .nav a[href="/about"],
 	body.tool        .nav a[href="/tools"],
@@ -251,7 +251,7 @@ body article .person p {
 	}
 }
 
-@media (min-width: 60em) {
+@media (min-width: 50em) {
 	header {
 		margin-bottom: 5em;
 		white-space: nowrap;
@@ -310,6 +310,11 @@ body article .person p {
 			therefore: 2/3 (nav width) / 5 (# of nav entries);
 		 */
 		width: 13.33333%;
+		-webkit-transition: 1s ease-out;
+		   -moz-transition: 1s ease-out;
+		    -ms-transition: 1s ease-out;
+		     -o-transition: 1s ease-out;
+		        transition: 1s ease-out;
 	}
 
 	header .navWrap .nav a {
@@ -401,7 +406,7 @@ textarea {
 	        transition: .3s ease-in-out;
 }
 
-@media (min-width: 60em) {
+@media (min-width: 50em) {
 	textarea {
 		border-right-width: 4em;
 	}

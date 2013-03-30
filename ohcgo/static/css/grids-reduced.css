@@ -1,4 +1,4 @@
-@media (max-width: 60em), not (width: 60em) {
+@media (max-width: 50em) {
 	.fractionGroup > *,
 	.unit {
 		margin: 1em 0;
@@ -11,7 +11,7 @@
 	}
 }
 
-@media (min-width: 60em) {
+@media (min-width: 50em) {
 	.fractionGroup > *,
 	.unit {
 		padding-right: 1em;
