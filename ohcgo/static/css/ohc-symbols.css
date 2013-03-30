@@ -1,9 +1,19 @@
-cross, cog {
+cross,
+cog {
   font-family: ohc-symboles;
+	position: absolute;
 }
 
-cross { content: '\e05a'; } /* '' */
-cog { content: '\e109'; } /* '' */
+/* Use Lea Verou's SVG trick to auto-expand glyphs to fill contents? */
+cross:after,
+cog:after {
+	left: 0;
+	position: absolute;
+	top: 0;
+}
+
+cross:after { content: '\e05a'; } /* '' */
+cog:after   { content: '\e109'; } /* '' */
 
 @font-face {
   font-family: ohc-symbols;

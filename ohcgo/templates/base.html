@@ -18,13 +18,22 @@
 		<script>
 			// Give CSS-readable feedback of the fact that the page is scripted, and the page is loading
 			void function loadWait(h,c){
-				h[c]   = h[c].replace('un','loading ');
+				h[c] = h[c].replace('un','loading ');
 				window.onload = new function loadTimeout(){
 					return setTimeout(function removeLoadingClass(){
 						h[c] = h[c].replace('loading','loaded')
 					},500);
 				};
 			}(document.lastChild,'className');
+
+			// Add our custom elements to the DOM
+			void function addElements(elements){
+				if(elements[0]){
+					document.createElement(elements.pop());
+
+					addElements(elements);
+				}
+			}(['header','article','ghost','flourish','cross','cog']);
 		</script>
 		<script src="/inc/javascript/modernizr.min.js"></script>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -55,10 +64,8 @@
 				}
 			}();
 		</script>
-		<script src="/inc/javascript/plugins.js">
-		</script>
-		<script src="/inc/javascript/main.js">
-		</script>
+		<script src="/inc/javascript/plugins.js"></script>
+		<script src="/inc/javascript/main.js"></script>
 	</head>
 	<body class="{% block page_type %}home{% endblock %}">
 		<header>
@@ -99,6 +106,11 @@
 				</div>
 			</div>
 		</header>
+		<flourish>
+			<cross/>
+			<cross/>
+			<cross/>
+		</flourish>
 		<div class="content">
 			<div class="contentWrap">
 				{% block content %}
@@ -164,5 +176,10 @@
 				</div>
 			</div>
 		</form>
+		<flourish>
+			<cog/>
+			<cog/>
+			<cog/>
+		</flourish>
 	</body>
 <html>
