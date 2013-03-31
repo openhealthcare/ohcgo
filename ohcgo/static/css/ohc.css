@@ -80,6 +80,10 @@ article, header {
 	position: relative;
 }
 
+.content {
+	padding: 0 0 6em;
+}
+
 .footer {
 	background: #1d1d1b;
 	color: #f4b119;
