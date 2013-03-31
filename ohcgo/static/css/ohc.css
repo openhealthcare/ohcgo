@@ -1,30 +1,28 @@
-ghost {
-	border: 0;
-	clip: rect(0 0 0 0);
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute;
-	width: 1px;
-}
-
 /* Loading style: hide until we're ready; */
 html.loading body {
+	opacity: 0;
 	visibility: hidden;
 }
 
 /*/*/
 
 html {
-	font: 400 1em/1.5 OpenSans, sans-serif;
+	background: #1d1d1b;
 	color: #444;
+	font: 400 1em/1.5 OpenSans, sans-serif;
 	-webkit-text-size-adjust: 100%;
 	    -ms-text-size-adjust: 100%;
 }
 
 body {
 	font-size: 80%;
+	opacity: 1;
+	-webkit-transition: .3s ease-in-out;
+	   -moz-transition: .3s ease-in-out;
+	    -ms-transition: .3s ease-in-out;
+	     -o-transition: .3s ease-in-out;
+	        transition: .3s ease-in-out;
+	visibility: visible;
 }
 
 .bffs {
@@ -420,6 +418,14 @@ textarea {
 	}
 }
 
+/**/
+
+.delineated {
+	border-color: rgba(68,68,68,.75);
+}
+
+/* Conditional styles - form feedback mechanics */
+
 [data-condition] {
 	overflow: hidden;
 	position: relative;
@@ -428,7 +434,8 @@ textarea {
 [data-conditional] {
 	background: #f4b119;
 	bottom: 100%;
-	color: rgba(63.75,63.75,63.75,0);
+	color: #444;
+	color: rgba(68,68,68,0);
 	height: 100%;
 	overflow: hidden;
 	position: absolute;
@@ -444,5 +451,18 @@ textarea {
 [data-condition="success"] [data-conditional="success"],
 [data-condition="failure"] [data-conditional="failure"] {
 	bottom: 0;
-	color: #444;
+	color: rgba(63.75,63.75,63.75,1);
+}
+
+/* Ghost markup */
+
+ghost {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
 }
