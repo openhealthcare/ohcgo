@@ -65,10 +65,6 @@ table {
 	border-spacing: 0;
 }
 
-html {
-	background: #444;
-}
-
 body {
 	background: #fefefe;
 	margin: 0;
@@ -425,7 +421,7 @@ textarea {
 /**/
 
 .delineated {
-	border-color: rgba(68,68,68,.75);
+	border-color: rgba(68,68,68,.33333);
 }
 
 /* Conditional styles - form feedback mechanics */

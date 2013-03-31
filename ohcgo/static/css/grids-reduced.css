@@ -6,7 +6,8 @@
 
 	/* Allow the specification of `fractionGroup.delineated` to have children border intelligently */
 	.delineated > * + * {
-		border-top: 1px solid;
+		border-top-style: solid;
+		border-top-width: 1px;
 		padding-top: 1em;
 	}
 }
@@ -23,12 +24,14 @@
 	}
 
 	.delineated > * + * {
-		border-left: 1px solid;
+		border-left-style: solid;
+		border-left-width: 1px;
 		padding-left: 1em;
 	}
 
 	.delineated > * {
-		border-right: 1px solid;
+		border-right-style: solid;
+		border-right-width: 1px;
 		/* 
 		Necessity of importance is bizarre. 
 		It isn't naturally superseded, and some elements fare fine. 
