@@ -1,20 +1,18 @@
 {% load markup %}
-<div class="delineated">
-  {% for tool in doctors %}
-  <div class="fractionGroup">
-    <div>
-      <img src="{{ STATIC_URL }}{{tool.image_location}}">
-    </div>
-    <div>
-      <h2>
-        <a href="{{ tool.get_absolute_url }}">
-          {{ tool.name }}
-        </a>
-      </h2>
-      <p>
-        {{ tool.description|markdown }}
-      </p>
-    </div>
+{% for tool in doctors %}
+<div class="fractionGroup">
+  <div>
+    <img src="{{ STATIC_URL }}{{tool.image_location}}">
   </div>
-  {% endfor %}
+  <div>
+    <h2>
+      <a href="{{ tool.get_absolute_url }}">
+        {{ tool.name }}
+      </a>
+    </h2>
+    <p>
+      {{ tool.description|markdown }}
+    </p>
+  </div>
 </div>
+{% endfor %}
