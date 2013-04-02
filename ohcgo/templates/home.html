@@ -18,7 +18,7 @@
 				</a>
 			</h2>
 			<img alt="NHS Hack Day logo" src="{{STATIC_URL}}{{ featured.image_location }}" />
-			<p>
+			<p> 
 			{{ featured.description|markdown }}
 			</p>
 		</div>
@@ -41,30 +41,26 @@
 			{% endfor %}
 		</div>
 	</div>
-	<div class="blog">
-		<div class="contentWrap">
-			<h2>
-				From the blog
-			</h2>
-			<div class="fractionGroup delineated">
-			{% for article in entries %}
-				<article>
-					<h3>
-						<a href="{{ article.link }}">
-							{{ article.title }}
-						</a>
-					</h3>
-					<p>
-					{% autoescape off %}
-						{{ article.description }}...
-					{% endautoescape %}
-						<a href="{{ article.link }}">
-							read more
-						</a>
-					</p>
-				</article>
-			{% endfor %}
-			</div>
-		</div>
+	<h2>
+		From the blog
+	</h2>
+	<div class="fractionGroup delineated">
+	{% for article in entries %}
+		<article>
+			<h3>
+				<a href="{{ article.link }}">
+					{{ article.title }}
+				</a>
+			</h3>
+			<p>
+			{% autoescape off %}
+				{{ article.description }}...
+			{% endautoescape %}
+				<a href="{{ article.link }}">
+					read more
+				</a>
+			</p>
+		</article>
+	{% endfor %}
 	</div>
 {% endblock %}
