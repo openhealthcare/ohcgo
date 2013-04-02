@@ -420,7 +420,7 @@ textarea {
 
 /**/
 
-.delineated {
+.delineated > * {
 	border-color: rgba(68,68,68,.33333);
 }
 
