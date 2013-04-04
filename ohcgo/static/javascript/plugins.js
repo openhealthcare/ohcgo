@@ -32,3 +32,38 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 (function(f){f.fn.getStyles=function(e,g){var d={},b,a;if(e&&e instanceof Array)for(var c=0,h=e.length;c<h;c++)a=e[c],d[a]=this.css(a);else if(c=this.get(0),window.getComputedStyle){var f=/\-([a-z])/g,l=function(a,b){return b.toUpperCase()};if(b=window.getComputedStyle(c,null)){var j,k;if(b.length){c=0;for(h=b.length;c<h;c++)a=b[c],j=a.replace(f,l),k=b.getPropertyValue(a),d[j]=k}else for(a in b)j=a.replace(f,l),k=b.getPropertyValue(a)||b[a],d[j]=k}}else if(b=c.currentStyle)for(a in b)d[a]=b[a];else if(b=
 c.style)for(a in b)"function"!=typeof b[a]&&(d[a]=b[a]);if(g&&g instanceof Array){c=0;for(h=g.length;c<h;c++)a=g[c],delete d[a]}return d};f.fn.copyCSS=function(e,g,d){e=f(e).getStyles(g,d);this.css(e)}})(jQuery);
+
+/*
+An ultra-small URI parsing function that accepts a URI-like string & returns an object with all the string properties of the native Location object for that string. Works entirely using native property detection, without any received wisdom (ie dictionaries, inference, etc).
+
+Maintained at https://gist.github.com/barneycarroll/5310151
+*/
+
+var locateURI = function locateURI_privateScope(){
+	var link       = document.createElement('a');
+	var properties = {};
+
+	void function getLocationProperties(){
+		var location = window.location;
+		var property = void 0;
+
+		for(property in location){
+			if(location.hasOwnProperty(property) && typeof location[property] === 'string' && link[property] !== void 0){
+				properties[property] = true;
+			}
+		}
+	}();
+
+	return function locateURI(URI){
+		var hash     = {};
+		var property = void 0;
+
+		link.href = URI;
+
+		for(property in properties){
+			hash[property] = link[property];
+		}
+
+		return hash;
+	};
+}();
