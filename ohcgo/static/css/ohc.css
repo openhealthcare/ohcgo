@@ -179,6 +179,10 @@ header h1 span {
 		padding: .25em;
 		width: 100%;
 	}
+
+	html flourish {
+		display: none;
+	}
 }
 
 .nav {
@@ -490,4 +494,25 @@ ghost {
 	padding: 0;
 	position: absolute;
 	width: 1px;
+}
+
+/* flourishes! */
+
+header,
+.footer {
+	position: relative;
+}
+
+flourish,
+flourish * {
+	position: absolute;
+}
+
+flourish {
+	display: none;
+	width: 100%;
+}
+
+header + flourish {
+	margin-top: -5em;
 }
