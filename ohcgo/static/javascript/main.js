@@ -111,6 +111,8 @@ void function initOHC($){
 			return;
 		}
 
+		history.pushState({content:$(document.lastChild.outerHTML)}, null, location.href);
+
 		window.onpopstate = function injectPage(event){
 			if(!event || !event.state){
 				return;
@@ -130,7 +132,7 @@ void function initOHC($){
 			$('html').addClass('reloading');
 
 			setTimeout(reveal, 300);
-		}
+		};
 
 		function requestPage(event){
 			event.preventDefault();
