@@ -122,7 +122,7 @@ void function initOHC($){
 			var $markup  = $payload.filter('.content').html();
 
 			function reveal(){
-				$('.contentWrap').html($markup);
+				$('.content').html($markup);
 				$('body').attr('class', section);
 				$('html').removeClass('reloading');
 			}
