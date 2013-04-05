@@ -76,6 +76,23 @@ article, header {
 	position: relative;
 }
 
+flourish,
+.content,
+.footer {
+	-webkit-transition: .3s ease-in-out;
+	   -moz-transition: .3s ease-in-out;
+	    -ms-transition: .3s ease-in-out;
+	     -o-transition: .3s ease-in-out;
+	        transition: .3s ease-in-out;
+}
+
+html.reloading flourish,
+html.reloading .content,
+html.reloading .footer {
+	opacity: 0;
+	visibility: hidden;
+}
+
 .content {
 	padding: 0 0 6em;
 }
@@ -319,7 +336,7 @@ body article .person p {
 		height: 3.5em;
 		line-height: 3.33333;
 		padding: 1em .5em;
-	} 
+	}
 
 	body.home        header .navWrap:before {
 		padding: 0 0 0 1em;
