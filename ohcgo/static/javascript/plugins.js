@@ -47,8 +47,15 @@ var locateURI = function locateURI_privateScope(){
 		var location = window.location;
 		var property = void 0;
 
+		// Fork for old JS engines
+		if(!location.hasOwnProperty){
+			location.hasOwnProperty = function hasOwnProperty(property){
+				return property === 'hasOwnProperty' ? false : Object.prototype.hasOwnProperty.call(location, property);
+			}
+		}
+
 		for(property in location){
-			if(location.hasOwnProperty(property) && typeof location[property] === 'string' && link[property] !== void 0){
+			if(hasOwnProperty(location, property) && typeof location[property] === 'string' && link[property] !== void 0){
 				properties[property] = true;
 			}
 		}
