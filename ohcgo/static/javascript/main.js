@@ -116,7 +116,7 @@ void function initOHC($){
 				return;
 			}
 
-			var section  = location.pathname.split('/')[0];
+			var section  = event.state.section;
 			var $payload = $(event.state.content);
 			var title    = $payload.filter('title').text();
 			var $markup  = $payload.filter('.content').html();
@@ -144,14 +144,19 @@ void function initOHC($){
 			$.ajax({
 				url     : link.href,
 				success : function(response){
-					history.pushState({content:response}, null, link.href);
+					var state = {
+						content : response,
+						section : link.href.split('/')[0] || 'home'
+					};
 
-					injectPage({state:{content:response}});
+					history.pushState(state, null, link.href);
+
+					injectPage({state:state});
 				}
 			});
 		}
 
-		history.replaceState({content:document.lastChild.outerHTML}, null, location.href);
+		history.replaceState({content:document.lastChild.outerHTML, section:'home'}, null, location.href);
 
 		$(window).on('popstate', injectPage);
 
