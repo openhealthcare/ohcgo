@@ -111,7 +111,7 @@ void function initOHC($){
 			return;
 		}
 
-		history.replaceState({content:document.lastChild.outerHTML, null, location.href);
+		history.replaceState({content:document.lastChild.outerHTML}, null, location.href);
 
 		window.onpopstate = function injectPage(event){
 			if(!event || !event.state){
