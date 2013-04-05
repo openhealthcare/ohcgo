@@ -95,8 +95,8 @@ void function initOHC($){
 				}
 			})
 			.on({
-				load     : Feedback(true),
-				error    : Feedback(false)
+				load     : new Feedback(true),
+				error    : new Feedback(false)
 			})
 			.appendTo(
 				$ghost
