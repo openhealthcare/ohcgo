@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'fontello';
   src: url("../font/fontello.eot?99903856");
-  src: url("../font/fontello.eot?99903856#iefix")    format('embedded-opentype'), 
-       url("../font/fontello.woff?99903856")         format('woff'), 
-       url("../font/fontello.ttf?99903856")          format('truetype'), 
+  src: url("../font/fontello.eot?99903856#iefix")    format('embedded-opentype'),
+       url("../font/fontello.woff?99903856")         format('woff'),
+       url("../font/fontello.ttf?99903856")          format('truetype'),
        url("../font/fontello.svg?99903856#fontello") format('svg');
 }
 /* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
@@ -55,11 +55,11 @@ cog:before {
 }
 
 html.ie7 cross {
-  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe05a;&nbsp;'); 
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe05a;&nbsp;');
 }
 
 html.ie7 cog {
-  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe109;&nbsp;'); 
+  *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe109;&nbsp;');
 }
 
 img {
@@ -80,32 +80,32 @@ img {
   text-align: center;
 }
 
-block {
+.logo block {
   background: black;
   height: 50%;
   top: 50%;
   width: 100%;
 }
 
-cross {
+.logo cross {
   font-size: 6em;
   top: 25%;
   width: 100%;
   margin-top: -.5em;
 }
 
-cog {
+.logo cog {
   color: #fff;
 }
 
-cog:nth-of-type(1) {
+.logo cog:nth-of-type(1) {
   font-size: 6em;
   margin-top: -.5em;
   top: 72%;
   width: 50%;
 }
 
-cog:nth-of-type(2) {
+.logo cog:nth-of-type(2) {
   font-size: 4em;
   margin-top: -.5em;
   left: 42%;
@@ -113,7 +113,7 @@ cog:nth-of-type(2) {
   width: 33.3333%;
 }
 
-cog:nth-of-type(3) {
+.logo cog:nth-of-type(3) {
   font-size: 3.75em;
   margin-top: -.5em;
   left: 65.6666%;
