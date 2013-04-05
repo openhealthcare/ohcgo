@@ -18,6 +18,10 @@ body {
 	position: relative;
 }
 
+.overflow-hidden {
+	overflow: hidden;
+}
+
 a {
 	background: transparent;
 	color: #5e5ed0;
@@ -281,12 +285,12 @@ body article .person p {
 
 	/* Used to highlight current top level nav context */
 
-	header .navWrap {
+	.navWrap {
 		overflow: visible;
 		position: relative;
 	}
 
-	header .navWrap:before {
+	.navWrap:before {
 		background: #fff;
 		content: ' ';
 		display: block;
@@ -300,42 +304,37 @@ body article .person p {
 			therefore: 2/3 (nav width) / 5 (# of nav entries);
 		 */
 		width: 13.33333%;
-		-webkit-transition: left 1s ease-out, width 1s ease-out, box-shadow 1s ease-out;
-		   -moz-transition: left 1s ease-out, width 1s ease-out, box-shadow 1s ease-out;
-		    -ms-transition: left 1s ease-out, width 1s ease-out, box-shadow 1s ease-out;
-		     -o-transition: left 1s ease-out, width 1s ease-out, box-shadow 1s ease-out;
-		        transition: left 1s ease-out, width 1s ease-out, box-shadow 1s ease-out;
 	}
 
-	header .navWrap .nav a {
+	.navWrap .nav a {
 		height: 3.5em;
 		line-height: 3.33333;
 		padding: 1em .5em;
 	}
 
-	body.home        header .navWrap:before {
+	body.home        .navWrap:before {
 		padding: 0 0 0 1em;
 		width: 33.33333%;
 	}
 
-	body.about       header .navWrap:before {
+	body.about       .navWrap:before {
 		left: 33.33333%;
 	}
 
-	body.tool        header .navWrap:before,
-	body.tools       header .navWrap:before {
+	body.tool        .navWrap:before,
+	body.tools       .navWrap:before {
 		left: 46.66667%;
 	}
 
-	body.hack-days   header .navWrap:before {
+	body.hack-days   .navWrap:before {
 		left: 60%;
 	}
 
-	body.consultancy header .navWrap:before {
+	body.consultancy .navWrap:before {
 		left: 73.33333%;
 	}
 
-	body.blog        header .navWrap:before {
+	body.blog        .navWrap:before {
 		left: 86.66667%;
 	}
 
@@ -445,6 +444,14 @@ html.reloading .content {
 	visibility: hidden;
 }
 
+.navWrap:before {
+	-webkit-transition: left 1s ease-out, width 1s ease-out, box-shadow 1s ease-out;
+	   -moz-transition: left 1s ease-out, width 1s ease-out, box-shadow 1s ease-out;
+	    -ms-transition: left 1s ease-out, width 1s ease-out, box-shadow 1s ease-out;
+	     -o-transition: left 1s ease-out, width 1s ease-out, box-shadow 1s ease-out;
+	        transition: left 1s ease-out, width 1s ease-out, box-shadow 1s ease-out;
+}
+
 /*
 // Average graphics not good enough?
 */
@@ -468,13 +475,6 @@ html.reloading .content {
 }
 /*
 */
-
-html.reloading .navWrap:before {
-	box-shadow: 0 0 1em #fff,
-	            0 0 1em #fff,
-	            0 0 1em #fff,
-	            0 0 1em #fff;
-}
 
 /* Conditional styles - form feedback mechanics */
 
