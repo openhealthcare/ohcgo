@@ -104,6 +104,10 @@ html.reloading .footer {
 	padding: 0 0 4em;
 }
 
+.footer + flourish {
+	color: #1d1d1b;
+}
+
 .footer p:first-child {
 	margin-top: 0;
 }
@@ -122,6 +126,10 @@ html.reloading .footer {
 header {
 	background: #f4b119;
 	color: #1d1d1b;
+}
+
+header + flourish {
+	color: #f4b119;
 }
 
 header a {
@@ -153,13 +161,13 @@ header h1 span {
 /* Used to highlight current top level nav context */
 
 @media (max-width: 50em) {
-	body.home        .nav a[href="/home"],
-	body.about       .nav a[href="/about"],
-	body.tool        .nav a[href="/tools"],
-	body.tools       .nav a[href="/tools"],
-	body.hack-days   .nav a[href="/hack-days"],
-	body.consultancy .nav a[href="/consultancy"],
-	body.blog        .nav a[href="/blog"] {
+	body.home        header a[href="/"],
+	body.about       header a[href="/about"],
+	body.tool        header a[href="/tools"],
+	body.tools       header a[href="/tools"],
+	body.hack-days   header a[href="/hack-days"],
+	body.consultancy header a[href="/consultancy"],
+	body.blog        header a[href="/blog"] {
 		background: #fff;
 		border: solid #fff;
 		border-width: 0 2em;
