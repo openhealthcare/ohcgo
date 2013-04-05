@@ -112,6 +112,10 @@ void function initOHC($){
 		}
 
 		window.onpopstate = function injectPage(event){
+			if(!event || !event.state){
+				return;
+			}
+
 			var section  = location.pathname.split('/')[0];
 			var $payload = $(event.state.content);
 			var title    = $payload.filter('title').text();
