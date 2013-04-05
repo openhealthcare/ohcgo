@@ -63,16 +63,17 @@ void function initOHC($){
 		function Feedback(success){
 			return function feedback(e){
 				$form.attr('data-condition', success ? 'success' : 'failure');
-			}
+			};
 		}
 
 		function resolve(e){
-			e.preventDefault();
-
 			$form.attr('data-condition', false);
+
+			// Prevent all propagation
+			return false;
 		}
 
-		// Bind attributes & events, attach to DOM 
+		// Bind attributes & events, attach to DOM
 		$form.attr({
 			target     : 'listener'
 		});
@@ -101,6 +102,61 @@ void function initOHC($){
 				$ghost
 			);
 
-		$acknowledge.on('click', resolve)
+		$acknowledge.on('click', resolve);
+	});
+
+	// AJAX internal pages in
+	$(function AJAX(){
+		if(!(history.pushState && history.replaceState && window.onpopstate !== void 0)){
+			return;
+		}
+
+		window.onpopstate = function injectPage(event){
+			var section  = location.pathname.split('/')[0];
+			var $payload = $(event.state.content);
+			var title    = $payload.filter('title').text();
+			var $markup  = $payload.filter('.contentWrap').html();
+
+			function reveal(){
+				$('.contentWrap').html($markup);
+				$('body').attr('class', section);
+				$('html').removeClass('reloading');
+			}
+
+			$('html').addClass('reloading');
+
+			setTimeout(reveal, 300);
+		}
+
+		function requestPage(event){
+			event.preventDefault();
+
+			var link    = event.target;
+
+			if(link.href === location.href){
+				return;
+			}
+
+			$.ajax({
+				url     : link.href,
+				success : function(response){
+					history.pushState({content:response}, null, link.href);
+				}
+			});
+		}
+
+		$('a').each(function filterAjaxLink(){
+			var link         = this;
+			var linkLocation = locateURI(link.href);
+
+			// Only for internal links
+			if(linkLocation.origin !== location.origin){
+				return;
+			}
+
+			console.log(link);
+
+			$(link).on('click', requestPage);
+		});
 	});
 }(jQuery);
