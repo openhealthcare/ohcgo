@@ -1,10 +1,10 @@
 @font-face {
-  font-family: 'cog&cross;
-  src: url("../font/cog&cross.eot?99903856");
-  src: url("../font/cog&cross.eot?99903856#iefix")    format('embedded-opentype'),
-       url("../font/cog&cross.woff?99903856")         format('woff'),
-       url("../font/cog&cross.ttf?99903856")          format('truetype'),
-       url("../font/cog&cross.svg?99903856#fontello") format('svg');
+  font-family: 'cog&cross';
+  src: url(../font/cog&cross.eot?99903856);
+  src: url(../font/cog&cross.eot?99903856#iefix)    format('embedded-opentype'),
+       url(../font/cog&cross.woff?99903856)         format('woff'),
+       url(../font/cog&cross.ttf?99903856)          format('truetype'),
+       url(../font/cog&cross.svg?99903856#fontello) format('svg');
 }
 
 flourish *:before {
