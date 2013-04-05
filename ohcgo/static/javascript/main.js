@@ -111,9 +111,7 @@ void function initOHC($){
 			return;
 		}
 
-		history.replaceState({content:document.lastChild.outerHTML}, null, location.href);
-
-		window.onpopstate = function injectPage(event){
+		function injectPage(event){
 			if(!event || !event.state){
 				return;
 			}
@@ -132,12 +130,12 @@ void function initOHC($){
 			$('html').addClass('reloading');
 
 			setTimeout(reveal, 300);
-		};
+		}
 
 		function requestPage(event){
 			event.preventDefault();
 
-			var link    = event.target;
+			var link = event.target;
 
 			if(link.href === location.href){
 				return;
@@ -147,9 +145,14 @@ void function initOHC($){
 				url     : link.href,
 				success : function(response){
 					history.pushState({content:response}, null, link.href);
+					injectPage({content:response});
 				}
 			});
 		}
+
+		history.replaceState({content:document.lastChild.outerHTML}, null, location.href);
+
+		$(window).on('popstate', injectPage);
 
 		$('a').each(function filterAjaxLink(){
 			var link         = this;
@@ -159,8 +162,6 @@ void function initOHC($){
 			if(linkLocation.origin !== location.origin){
 				return;
 			}
-
-			console.log(link);
 
 			$(link).on('click', requestPage);
 		});
