@@ -144,9 +144,11 @@ void function initOHC($){
 			$.ajax({
 				url     : link.href,
 				success : function(response){
+					var section = link.pathname && link.pathname.match(/^\//) ? link.pathname.split('/')[1] : 'home';
+
 					var state = {
 						content : response,
-						section : link.href.split('/')[0] || 'home'
+						section : section
 					};
 
 					history.pushState(state, null, link.href);
