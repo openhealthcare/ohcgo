@@ -112,12 +112,13 @@ void function initOHC($){
 		}
 
 		function injectPage(event){
-			if(!event || !event.originalEvent.state){
+			if(!event){
 				return;
 			}
 
-			var section  = event.originalEvent.state.section;
-			var $payload = $(event.originalEvent.state.content);
+			event        = event.state ? event : event.originalEvent;
+			var section  = event.state.section;
+			var $payload = $(event.state.content);
 			var title    = $payload.filter('title').text();
 			var $markup  = $payload.filter('.content').html();
 
