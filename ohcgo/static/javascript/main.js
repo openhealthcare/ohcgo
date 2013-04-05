@@ -111,7 +111,7 @@ void function initOHC($){
 			return;
 		}
 
-		history.replaceState({content:$(document.lastChild.outerHTML)}, null, location.href);
+		history.replaceState({content:document.lastChild.outerHTML, null, location.href);
 
 		window.onpopstate = function injectPage(event){
 			if(!event || !event.state){
@@ -121,7 +121,7 @@ void function initOHC($){
 			var section  = location.pathname.split('/')[0];
 			var $payload = $(event.state.content);
 			var title    = $payload.filter('title').text();
-			var $markup  = $payload.filter('.contentWrap').html();
+			var $markup  = $payload.filter('.content').html();
 
 			function reveal(){
 				$('.contentWrap').html($markup);
