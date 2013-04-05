@@ -80,32 +80,32 @@ img {
   text-align: center;
 }
 
-.logo block {
+block {
   background: black;
   height: 50%;
   top: 50%;
   width: 100%;
 }
 
-.logo cross {
+cross {
   font-size: 6em;
   top: 25%;
   width: 100%;
   margin-top: -.5em;
 }
 
-.logo cog {
+cog {
   color: #fff;
 }
 
-.logo cog:nth-of-type(1) {
+cog:nth-of-type(1) {
   font-size: 6em;
   margin-top: -.5em;
   top: 72%;
   width: 50%;
 }
 
-.logo cog:nth-of-type(2) {
+cog:nth-of-type(2) {
   font-size: 4em;
   margin-top: -.5em;
   left: 42%;
@@ -113,7 +113,7 @@ img {
   width: 33.3333%;
 }
 
-.logo cog:nth-of-type(3) {
+cog:nth-of-type(3) {
   font-size: 3.75em;
   margin-top: -.5em;
   left: 65.6666%;
