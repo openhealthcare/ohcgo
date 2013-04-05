@@ -135,7 +135,7 @@ void function initOHC($){
 		function requestPage(event){
 			event.preventDefault();
 
-			var link = event.target;
+			var link = $(event.target).is('a') ? event.target : $(event.target).closest('a');
 
 			if(link.href === location.href){
 				return;
