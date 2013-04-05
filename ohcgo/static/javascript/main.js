@@ -131,7 +131,7 @@ void function initOHC($){
 
 			$('html').addClass('reloading');
 
-			setTimeout(reveal, 300);
+			setTimeout(reveal, 600);
 		}
 
 		function requestPage(link){
