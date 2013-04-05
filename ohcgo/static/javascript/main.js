@@ -145,7 +145,8 @@ void function initOHC($){
 				url     : link.href,
 				success : function(response){
 					history.pushState({content:response}, null, link.href);
-					injectPage({content:response});
+
+					injectPage({state:{content:response}});
 				}
 			});
 		}
