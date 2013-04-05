@@ -132,10 +132,8 @@ void function initOHC($){
 			setTimeout(reveal, 300);
 		}
 
-		function requestPage(event){
+		function requestPage(link){
 			event.preventDefault();
-
-			var link = $(event.target).is('a') ? event.target : $(event.target).closest('a');
 
 			if(link.href === location.href){
 				return;
@@ -162,16 +160,18 @@ void function initOHC($){
 
 		$(window).on('popstate', injectPage);
 
-		$('a').each(function filterAjaxLink(){
+		$(document).on('click', 'a', function filterAjaxLink(event){
 			var link         = this;
 			var linkLocation = locateURI(link.href);
 
-			// Only for internal links
-			if(linkLocation.origin !== location.origin){
+			// Only for non-identical internal links
+			if(linkLocation.origin !== location.origin || linkLocation === location){
 				return;
 			}
 
-			$(link).on('click', requestPage);
+			event.preventDefault();
+
+			requestPage(link);
 		});
 	});
 }(jQuery);
