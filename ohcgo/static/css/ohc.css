@@ -449,7 +449,7 @@ html.reloading .content {
 // Average graphics not good enough?
 */
 .content {
-	max-height: 99em;
+	max-height: 150em;
 	overflow: hidden;
 	-webkit-transition: max-height 3s linear, opacity .3s ease-in-out, visibility .3s ease-in-out;
 	   -moz-transition: max-height 3s linear, opacity .3s ease-in-out, visibility .3s ease-in-out;
@@ -465,23 +465,6 @@ html.reloading .content {
 	    -ms-transition: max-height .3s linear, opacity .3s ease-in-out, visibility .3s ease-in-out;
 	     -o-transition: max-height .3s linear, opacity .3s ease-in-out, visibility .3s ease-in-out;
 	        transition: max-height .3s linear, opacity .3s ease-in-out, visibility .3s ease-in-out;
-}
-
-html {
-	-webkit-transition: overflow-y 0 ease-in-out 3s;
-	   -moz-transition: overflow-y 0 ease-in-out 3s;
-	    -ms-transition: overflow-y 0 ease-in-out 3s;
-	     -o-transition: overflow-y 0 ease-in-out 3s;
-	        transition: overflow-y 0 ease-in-out 3s;
-}
-
-html.reloading {
-	overflow-y: hidden;
-	-webkit-transition: overflow-y 0 ease-in-out .3s;
-	   -moz-transition: overflow-y 0 ease-in-out .3s;
-	    -ms-transition: overflow-y 0 ease-in-out .3s;
-	     -o-transition: overflow-y 0 ease-in-out .3s;
-	        transition: overflow-y 0 ease-in-out .3s;
 }
 /*
 */
