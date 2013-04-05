@@ -135,8 +135,6 @@ void function initOHC($){
 		}
 
 		function requestPage(link){
-			event.preventDefault();
-
 			if(link.href === location.href){
 				return;
 			}
