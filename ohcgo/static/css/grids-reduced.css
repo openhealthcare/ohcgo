@@ -100,8 +100,8 @@
 	}
 
 	/* Flexbox overrides: allows full secondary axis occupancy; */
-	html.flexbox .fractionGroup:nth-child(n):nth-child(n),
-	html.flexbox .fractionGroup:nth-child(n):nth-child(n) > * {
+	html.support_flexbox .fractionGroup:nth-child(n):nth-child(n),
+	html.support_flexbox .fractionGroup:nth-child(n):nth-child(n) > * {
 		-webkit-box-flex: 1;
 		   -moz-box-flex: 1;
 		    -ms-box-flex: 1;
@@ -115,7 +115,7 @@
 		overflow: visible;
 	}
 
-	html.flexbox .fractionGroup {
+	html.support_flexbox .fractionGroup {
 		-webkit-box-align: stretch;
 		   -moz-box-align: stretch;
 		    -ms-box-align: stretch;
@@ -143,12 +143,12 @@
 		display:         box;
 	}
 
-	html.flexbox .fractionGroup > :nth-child(n):nth-child(n) {
+	html.support_flexbox .fractionGroup > :nth-child(n):nth-child(n) {
 		float: none;
 		width: 0;
 	}
 
-	html.flexbox [class*=size2of]:nth-child(n):nth-child(n) {
+	html.support_flexbox [class*=size2of]:nth-child(n):nth-child(n) {
 		-webkit-box-flex: 2;
 		   -moz-box-flex: 2;
 		    -ms-box-flex: 2;
@@ -161,7 +161,7 @@
 		            flex: 2;
 	}
 
-	html.flexbox [class*=size3of]:nth-child(n):nth-child(n) {
+	html.support_flexbox [class*=size3of]:nth-child(n):nth-child(n) {
 		-webkit-box-flex: 3;
 		   -moz-box-flex: 3;
 		    -ms-box-flex: 3;

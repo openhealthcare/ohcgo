@@ -18,7 +18,7 @@
 		<script>
 			// Give CSS-readable feedback of the fact that the page is scripted, and the page is loading
 			void function loadWait(h,c){
-				h[c] = h[c].replace('un','loading ');
+				h[c] = h[c].replace('unscripted','loading ');
 				window.onload = new function loadTimeout(){
 					return setTimeout(function removeLoadingClass(){
 						h[c] = h[c].replace('loading','loaded')
