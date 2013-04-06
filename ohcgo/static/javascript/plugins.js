@@ -55,7 +55,7 @@ var locateURI = function locateURI_privateScope(){
 		}
 
 		for(property in location){
-			if(hasOwnProperty(location, property) && typeof location[property] === 'string' && link[property] !== void 0){
+			if(location.hasOwnProperty(property) && typeof location[property] === 'string' && link[property] !== void 0){
 				properties[property] = true;
 			}
 		}
