@@ -36,9 +36,9 @@
 	.delineated.fractionGroup > * {
 		border-right-style: solid;
 		border-right-width: 1px;
-		/* 
-		Necessity of importance is bizarre. 
-		It isn't naturally superseded, and some elements fare fine. 
+		/*
+		Necessity of importance is bizarre.
+		It isn't naturally superseded, and some elements fare fine.
 		Investigate further.
 		*/
 		margin-right: -1px !important;
@@ -73,11 +73,17 @@
 	.size1of3:nth-child(n):nth-child(n):nth-child(n) {
 		width:33.33333%;
 	}
+	.size2of3:nth-child(n):nth-child(n):nth-child(n) {
+		width:66.66666%;
+	}
 	.fractionGroup > :nth-child(1):nth-last-child(4),
 	.fractionGroup > :nth-child(2):nth-last-child(3),
 	.fractionGroup > :nth-child(3):nth-last-child(2),
 	.size1of4:nth-child(n):nth-child(n):nth-child(n) {
 		width:25%;
+	}
+	.size3of4:nth-child(n):nth-child(n):nth-child(n) {
+		width:756%;
 	}
 	.fractionGroup > :nth-child(1):nth-last-child(5),
 	.fractionGroup > :nth-child(2):nth-last-child(4),
@@ -85,6 +91,15 @@
 	.fractionGroup > :nth-child(4):nth-last-child(2),
 	.size1of5:nth-child(n):nth-child(n):nth-child(n) {
 		width:20%;
+	}
+	.size2of5:nth-child(n):nth-child(n):nth-child(n) {
+		width:40%;
+	}
+	.size3of5:nth-child(n):nth-child(n):nth-child(n) {
+		width:60%;
+	}
+	.size4of5:nth-child(n):nth-child(n):nth-child(n) {
+		width:80%;
 	}
 	.fractionGroup > :last-child:last-child:last-child,
 	.lastUnit {
