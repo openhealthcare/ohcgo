@@ -415,6 +415,9 @@ textarea {
 	border-color: rgba(68,68,68,.33333);
 }
 
+
+
+
 /* Loading style: hide until we're ready; */
 
 html {
@@ -554,4 +557,17 @@ textarea,
 	/* Force GPU */
 	-webkit-backface-visibility: hidden;
 	-webkit-perspective: 1000;
+}
+
+
+/* Blogging */
+
+.blog h2 {
+    font-size: 1.8em;
+}
+div.blog p {
+    font-size: 1.6em;
+}
+.entry-widgets {
+    display: none;
 }

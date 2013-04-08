@@ -152,7 +152,10 @@ void function initOHC($){
 					history.pushState(state, null, link.href);
 
 					injectPage({state:state});
-				}
+				},
+			        error : function(response){
+                                    window.location.href = link.href
+                                }
 			});
 		}
 

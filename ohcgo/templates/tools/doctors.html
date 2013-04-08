@@ -1,10 +1,9 @@
 {% load markup %}
 {% for tool in doctors %}
-<div class="fractionGroup">
-  <div>
-    <img src="{{ STATIC_URL }}{{tool.image_location}}">
-  </div>
-  <div>
+  <div class="fractionGroup">
+  {% if forloop.counter|divisibleby:2 %}
+
+  <div class="size2of3">
     <h2>
       <a href="{{ tool.get_absolute_url }}">
         {{ tool.name }}
@@ -14,5 +13,23 @@
       {{ tool.description|markdown }}
     </p>
   </div>
-</div>
+<div class="size1of3">
+    <img src="{{ STATIC_URL }}{{tool.image_location}}">
+  </div>
+  {% else %}
+  <div class="size1of3">
+    <img src="{{ STATIC_URL }}{{tool.image_location}}">
+  </div>
+  <div class="size2of3">
+    <h2>
+      <a href="{{ tool.get_absolute_url }}">
+        {{ tool.name }}
+      </a>
+    </h2>
+    <p>
+      {{ tool.description|markdown }}
+    </p>
+  </div>
+  {% endif %}
+  </div>
 {% endfor %}

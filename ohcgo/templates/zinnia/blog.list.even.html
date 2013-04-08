@@ -1,0 +1,33 @@
+<div class="fractionGroup">
+
+  <div id="entry-{{ object.pk }}" class="size2of3 hentry{% if object.featured %} featured{% endif %}">
+    <h2 class="entry-title">
+      <a href="{{ object.get_absolute_url }}" title="{{ object.title }}" rel="bookmark">{{ object.title }}</a>
+    </h2>
+
+    <p>
+      {% with authors=object.authors.all %}{% for author in authors %}
+      <span class="vcard author">
+        By <a href="{{ author.get_absolute_url }}" class="fn url{% if not author.get_full_name %} nickname{% endif %}" rel="author"
+           title="Show all {{ author }}'s entries">{{ author }}</a></span>{% if not forloop.last %}, {% endif %}
+      {% endfor %}{% endwith %},
+      <abbr class="published" title="{{ object.creation_date|date:"c" }}">{{ object.creation_date|date:"d M Y" }}</abbr>
+    </p>
+    {{ object_content }}
+    <p>
+      {% with categories=object.categories.all %}{% if categories|length %}
+      {% for category in categories %}
+      <a href="{{ category.get_absolute_url }}"
+         title="Show all entries in {{ category }}}"
+         rel="tag category">{{ category }}</a>{% if not forloop.last %}, {% endif %}{% endfor %}{% endif %}{% endwith %}
+    </p>
+
+  </div> <!-- 2of3 -->
+
+  <div class="size1of3 overflow_hidden">
+    <a href="{{ object.get_absolute_url }}" title="{{ object.title }}" rel="bookmark">
+      <img src="{{ object.image.url }}" alt="{{ object.title }}" class="left" />
+    </a>
+  </div>
+
+</div> <!-- fractionGroup -->

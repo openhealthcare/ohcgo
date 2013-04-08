@@ -1,0 +1,57 @@
+		<form  action="/contact/" method="POST" class="footer">
+			<script type="markup">
+				<div class="response" data-conditional="success">
+					<div class="contentWrap">
+						<h2>
+							Thanks!
+						</h2>
+						<p>
+							It's always nice to hear from people! We'll get in touch with you as soon as we can.
+						</p>
+						<a href="#">OK</a>
+					</div>
+				</div>
+				<div class="response" data-conditional="failure">
+					<div class="contentWrap">
+						<h2>
+							Oops!
+						</h2>
+						<p>
+							Something went wrong. Come back later and try again, or use another means of communication.
+						</p>
+						<a href="#">OK</a>
+					</div>
+				</div>
+			</script>
+			<div class="contentWrap">
+				<h2>Get in touch with OHC</h2>
+				<div class="fractionGroup">
+					{% csrf_token %} <!-- We need this to accept POST. -->
+					<div>
+						<p>
+							Find us on twitter <a href="http://www.twitter.com/ohcuk">@ohcuk</a>, send an email to <a href="mailto:hello@openhealthcare.org.uk">hello@openhealthcare.org.uk</a>, or fill in the following form:
+						</p>
+					</div>
+					<div>
+						<div class="fractionGroup">
+							<label for="name">
+								Your name:
+							</label>
+							<input name="name" required/>
+						</div>
+						<div class="fractionGroup">
+							<label for="email">
+								Your email address:
+							</label>
+							<input name="email" required type="email" />
+						</div>
+					</div>
+					<div class="relative">
+						<textarea name="message" placeholder="Dear OHC&#133;" required></textarea>
+						<button>
+							Send
+						</button>
+					</div>
+				</div>
+			</div>
+		</form>

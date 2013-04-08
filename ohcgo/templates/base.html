@@ -68,44 +68,7 @@
 		<script src="/inc/javascript/main.js"></script>
 	</head>
 	<body class="{% block page_type %}home{% endblock %}">
-		<header>
-			<div class="contentWrap">
-				<div class="navWrap fractionGroup">
-					<div class="colophon size1of3">
-						<h1>
-							<a href="{% url home %}">
-								<img alt src="/inc/img/ohc-trans.png"/>
-								<span class="text">
-									Open Health Care UK
-								</span>
-							</a>
-						</h1>
-					</div>
-					<div class="nav size2of3 fractionGroup">
-					<!--
-						The url tag is a reverse
-						lookup on the routes in urls.py on
-						the name keyword
-					-->
-						<a href="{% url about %}">
-							About
-						</a>
-						<a href="{% url products %}">
-							Tools
-						</a>
-						<a href="{% url hackdays %}">
-							Hack Days
-						</a>
-						<a href="{% url consultancy %}">
-							Consultancy
-						</a>
-						<a href="#">
-							Blog
-						</a>
-					</div>
-				</div>
-			</div>
-		</header>
+                {% include 'nav.html' %}
 		<flourish>
 			<cross></cross>
 			<cross></cross>
@@ -119,63 +82,7 @@
 		</div>
 		{% block content_after %}
 		{% endblock %}
-		<form  action="/contact/" method="POST" class="footer">
-			<script type="markup">
-				<div class="response" data-conditional="success">
-					<div class="contentWrap">
-						<h2>
-							Thanks!
-						</h2>
-						<p>
-							It's always nice to hear from people! We'll get in touch with you as soon as we can.
-						</p>
-						<a href="#">OK</a>
-					</div>
-				</div>
-				<div class="response" data-conditional="failure">
-					<div class="contentWrap">
-						<h2>
-							Oops!
-						</h2>
-						<p>
-							Something went wrong. Come back later and try again, or use another means of communication.
-						</p>
-						<a href="#">OK</a>
-					</div>
-				</div>
-			</script>
-			<div class="contentWrap">
-				<h2>Get in touch with OHC</h2>
-				<div class="fractionGroup">
-					{% csrf_token %} <!-- We need this to accept POST. -->
-					<div>
-						<p>
-							Find us on twitter <a href="http://www.twitter.com/ohcuk">@ohcuk</a>, send an email to <a href="mailto:hello@openhealthcare.org.uk">hello@openhealthcare.org.uk</a>, or fill in the following form:
-						</p>
-					</div>
-					<div>
-						<div class="fractionGroup">
-							<label for="name">
-								Your name:
-							</label>
-							<input name="name" required/>
-						</div>
-						<div class="fractionGroup">
-							<label for="email">
-								Your email address:
-							</label>
-							<input name="email" required type="email" />
-						</div>
-					</div>
-					<div class="relative">
-						<textarea name="message" placeholder="Dear OHC&#133;" required></textarea>
-						<button>
-							Send
-						</button>
-					</div>
-				</div>
-			</div>
-		</form>
+                {% include 'contact.footer.html' %}
 		<flourish>
 			<cog></cog>
 			<cog></cog>

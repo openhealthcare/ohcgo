@@ -1,10 +1,18 @@
 {% load comments i18n %}
-{% load url from future %}
+{% load zinnia_tags i18n %}
 
-<div class="fractionGroup">
+{% if continue_reading %}
+  <!-- We're in a listy place -->
+  {% if forloop.counter|divisibleby:2 %}
+    {% include 'zinnia/blog.list.even.html' %}
+  {% else %}
+    {% include 'zinnia/blog.list.odd.html' %}
+  {% endif %}
+{% else %}
+  <!-- This is a detail view -->
 
-  <div class="dummy-col"></div>
-  <div class="metadata">
+<div class="fractionGroup {% if not continue_reading %}blog{% endif %}">
+  <div>
     <p>
       <abbr class="published" title="{{ object.creation_date|date:"c" }}">{{ object.creation_date|date:"d M Y" }}</abbr>
     </p>
@@ -24,7 +32,18 @@
       {% endfor %}
       {% endwith %}
     </p>
-    {% block entry-image %}{% if object.image %}
+  </div>
+  <div id="entry-{{ object.pk }}" class="size2of3 hentry{% if object.featured %} featured{% endif %}">
+
+      <div class="entry-header">
+          <h2 class="entry-title">
+            <a href="{{ object.get_absolute_url }}" title="{{ object.title }}" rel="bookmark">
+              {{ object.title }}
+            </a>
+          </h2>
+      </div> <!-- entry-header -->
+
+      {% if object.image %}
       <p>
         {% if continue_reading %}
         <a href="{{ object.get_absolute_url }}" title="{{ object.title }}" rel="bookmark">
@@ -34,123 +53,116 @@
         </a>
         {% endif %}
       </p>
-    {% endif %}{% endblock %}
-  </div> <!-- metadata -->
+    {% endif %}
 
-  <div id="entry-{{ object.pk }}" class="hentry{% if object.featured %} featured{% endif %}">
-    {% block entry-header %}
-      <div class="entry-header">
-        {% block entry-title %}
-          <h2 class="entry-title">
-            <a href="{{ object.get_absolute_url }}" title="{{ object.title }}" rel="bookmark">
-              {{ object.title }}
-            </a>
-          </h2>
-        {% endblock %}
-      </div> <!-- entry-header -->
-    {% endblock %}
-
-    {% block entry-body %}
       <div class="entry-body">
-        {% block entry-content %}
           <div class="entry-content">{{ object_content }}</div> <!-- entry-content -->
-        {% endblock %}
-        {% block continue-reading %}
-          {% if continue_reading %}
-            <p class="continue-reading">
-              <a href="{{ object.get_absolute_url }}"
-                 title="{% blocktrans with object=object.title %}Continue reading {{ object }}{% endblocktrans %}"
-                 rel="bookmark">
-                 {% trans "Continue reading" %}
-               </a>
-            </p>
-          {% endif %}
-        {% endblock %}
       </div> <!-- entry-body -->
-    {% endblock %}
 
+    <!--   <div class="entry-footer"> -->
+    <!-- {% if not continue_reading %} -->
+    <!-- <p class="entry-tags"> -->
+    <!--   <strong>{% trans "Tags" %}</strong> : -->
+    <!--   {% for tag in object.tags_list %} -->
+    <!--     {{ tag }} -->
+    <!--   {% empty %} -->
+    <!--   <span>{% trans "No tags" %}</span> -->
+    <!--   {% endfor %} -->
+    <!-- </p> -->
 
-    {% block entry-footer %}
-      <div class="entry-footer">
+    <!-- {% endif %} -->
 
-    {% block entry-tags %}
-    {% if not continue_reading %}
-    <p class="entry-tags">
-      <strong>{% trans "Tags" %}</strong> :
-      {% for tag in object.tags_list %}
-      <a href="{% url 'zinnia_tag_detail' tag %}"
-         title="{% blocktrans %}Show all entries tagged by {{ tag }}{% endblocktrans %}"
-         rel="tag">{{ tag }}</a>
-      {% empty %}
-      <span>{% trans "No tags" %}</span>
-      {% endfor %}
-    </p>
+    <!--   {% if not continue_reading %} -->
+    <!--     <p class="entry-shorturl"> -->
+    <!--       <strong>{% trans "Short url" %}</strong> : -->
+    <!--       <a href="{{ object.short_url }}" -->
+    <!--          title="{% blocktrans with object=object.title %}Short URL to {{ object }}{% endblocktrans %}" -->
+    <!--          rel="shortlink"> -->
+    <!--          {{ object.short_url }} -->
+    <!--          </a> -->
+    <!--     </p> -->
+    <!--     {% endif %} -->
 
-    {% endif %}
-    {% endblock %}
+    <!-- {% if not continue_reading %} -->
+    <!-- <p class="entry-comments"> -->
+    <!--   <strong>{% trans "Discussions" %}</strong> : -->
+    <!--   {% with comment_count=object.comment_count %} -->
+    <!--   {% if comment_count %} -->
+    <!--   <a href="{{ object.get_absolute_url }}#comments" -->
+    <!--      title="{% blocktrans with object=object.title %}Comments on {{ object }}{% endblocktrans %}"> -->
+    <!--     {% blocktrans count comment_count=comment_count %}{{ comment_count }} comment{% plural %}{{ comment_count }} comments{% endblocktrans %} -->
+    <!--   </a> -->
+    <!--   {% else %} -->
+    <!--   {% if object.comments_are_open %} -->
+    <!--   {% trans "No comments yet." %} -->
+    <!--   <a href="{{ object.get_absolute_url }}#comment-form" -->
+    <!--      title="{% blocktrans with object=object.title %}Leave a comment on {{ object }}{% endblocktrans %}"> -->
+    <!--     {% trans "Be first to comment!" %} -->
+    <!--   </a> -->
+    <!--   {% else %} -->
+    <!--   {% trans "Comments are closed." %} -->
+    <!--   {% endif %} -->
+    <!--   {% endif %} -->
+    <!--   {% endwith %} -->
 
-    {% block entry-shorturl %}
-      {% if not continue_reading %}
-        <p class="entry-shorturl">
-          <strong>{% trans "Short url" %}</strong> :
-          <a href="{{ object.short_url }}"
-             title="{% blocktrans with object=object.title %}Short URL to {{ object }}{% endblocktrans %}"
-             rel="shortlink">
-             {{ object.short_url }}
-             </a>
-        </p>
-        {% endif %}
-    {% endblock %}
+    <!--   {% with pingback_count=object.pingback_count %} -->
+    <!--   {% if pingback_count %} -->
+    <!--   , <a href="{{ object.get_absolute_url }}#pingbacks" title="{% blocktrans with object=object.title %}Pingbacks on {{ object }}{% endblocktrans %}"> -->
+    <!--     {% blocktrans count pingback_count=pingback_count %}{{ pingback_count }} pingback{% plural %}{{ pingback_count }} pingbacks{% endblocktrans %} -->
+    <!--   </a> -->
+    <!--   {% endif %} -->
+    <!--   {% endwith %} -->
 
-    {% block entry-comments %}
-    {% if not continue_reading %}
-    <p class="entry-comments">
-      <strong>{% trans "Discussions" %}</strong> :
-      {% with comment_count=object.comment_count %}
-      {% if comment_count %}
-      <a href="{{ object.get_absolute_url }}#comments"
-         title="{% blocktrans with object=object.title %}Comments on {{ object }}{% endblocktrans %}">
-        {% blocktrans count comment_count=comment_count %}{{ comment_count }} comment{% plural %}{{ comment_count }} comments{% endblocktrans %}
-      </a>
-      {% else %}
-      {% if object.comments_are_open %}
-      {% trans "No comments yet." %}
-      <a href="{{ object.get_absolute_url }}#comment-form"
-         title="{% blocktrans with object=object.title %}Leave a comment on {{ object }}{% endblocktrans %}">
-        {% trans "Be first to comment!" %}
-      </a>
-      {% else %}
-      {% trans "Comments are closed." %}
-      {% endif %}
-      {% endif %}
-      {% endwith %}
+    <!--   {% with trackback_count=object.trackback_count %} -->
+    <!--   {% if trackback_count %} -->
+    <!--   , <a href="{{ object.get_absolute_url }}#trackbacks" title="{% blocktrans with object=object.title %}Trackbacks on {{ object }}{% endblocktrans %}"> -->
+    <!--     {% blocktrans count trackback_count=trackback_count %}{{ trackback_count }} trackback{% plural %}{{ trackback_count }} trackbacks{% endblocktrans %} -->
+    <!--   </a> -->
+    <!--   {% endif %} -->
+    <!--   {% endwith %} -->
 
-      {% with pingback_count=object.pingback_count %}
-      {% if pingback_count %}
-      , <a href="{{ object.get_absolute_url }}#pingbacks" title="{% blocktrans with object=object.title %}Pingbacks on {{ object }}{% endblocktrans %}">
-        {% blocktrans count pingback_count=pingback_count %}{{ pingback_count }} pingback{% plural %}{{ pingback_count }} pingbacks{% endblocktrans %}
-      </a>
-      {% endif %}
-      {% endwith %}
-
-      {% with trackback_count=object.trackback_count %}
-      {% if trackback_count %}
-      , <a href="{{ object.get_absolute_url }}#trackbacks" title="{% blocktrans with object=object.title %}Trackbacks on {{ object }}{% endblocktrans %}">
-        {% blocktrans count trackback_count=trackback_count %}{{ trackback_count }} trackback{% plural %}{{ trackback_count }} trackbacks{% endblocktrans %}
-      </a>
-      {% endif %}
-      {% endwith %}
-
-    </p>
-    {% endif %}
-    {% endblock %}
-    </div>
-    {% endblock %}
-
-
+    <!-- </p> -->
+    <!-- {% endif %} -->
+    <!-- </div> -->
 
   </div> <!-- hentry -->
 
 </div> <!-- fractionGroup -->
 
-<hr />
+{% endif %}
+
+{% block entry-widgets %}
+  {% if not continue_reading %}
+<div class="fractionGroup">
+  {% with next_entry=object.next_entry %}{% if next_entry %}
+  <div>
+    <h3>Next entry</h3>
+    <p>
+      <a href="{{ next_entry.get_absolute_url }}" title="{{ next_entry.title }}" rel="next">
+        {{ next_entry.title }}
+      </a>
+    </p>
+  </div>
+
+  <div>
+    <h3>{% trans "Similar entries" %}</h3>
+    {% get_similar_entries %}
+  </div>
+
+  {% endif %}{% endwith %}
+  {% with previous_entry=object.previous_entry %}{% if previous_entry %}
+  <div>
+    <h3>{% trans "Previous entry" %}</h3>
+    <p>
+      <a href="{{ previous_entry.get_absolute_url }}" title="{{ previous_entry.title }}" rel="prev">
+        {{ previous_entry.title }}
+      </a>
+    </p>
+  </div>
+  {% endif %}{% endwith %}
+
+</div>
+
+  {% endif %}
+
+{% endblock %}
