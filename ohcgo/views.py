@@ -5,6 +5,8 @@ from django.core.urlresolvers import reverse_lazy
 from django.views.generic import TemplateView
 from django.views.generic.edit import FormView
 
+from zinnia.models import Entry
+
 from ohcgo import feeds
 from ohcgo.forms import ContactForm
 from ohcgo.products.models import Product
@@ -28,7 +30,8 @@ class Home(TemplateView):
         """
         context = super(Home, self).get_context_data(**kw)
         context['products'] = Product.objects.filter(frontpage=True)
-        context['entries'] = feeds.recent_posts()
+#        context['entries'] = feeds.recent_posts()
+        context['entries'] = Entry.objects.filter(featured=True)[:3]
         try:
             context['featured'] = Product.objects.filter(featured=True)[0]
         except IndexError:
