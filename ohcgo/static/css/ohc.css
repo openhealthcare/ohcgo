@@ -45,8 +45,15 @@ a:focus,
 img {
 	border: 0;
 	display: block;
-	max-height: 15em;
 	max-width: 100%;
+}
+
+
+@media (max-width: 50em) {
+	.content img {
+		margin: 1em 0;
+		width: 100%;
+	}
 }
 
 table {
@@ -458,23 +465,25 @@ html.reloading .content {
 /*
 // Average graphics not good enough?
 */
-.content {
-	max-height: 150em;
-	overflow: hidden;
-	-webkit-transition: max-height 3s linear, opacity .3s ease-in-out, visibility .3s ease-in-out;
-	   -moz-transition: max-height 3s linear, opacity .3s ease-in-out, visibility .3s ease-in-out;
-	    -ms-transition: max-height 3s linear, opacity .3s ease-in-out, visibility .3s ease-in-out;
-	     -o-transition: max-height 3s linear, opacity .3s ease-in-out, visibility .3s ease-in-out;
-	        transition: max-height 3s linear, opacity .3s ease-in-out, visibility .3s ease-in-out;
-}
+@media (min-width: 50em) {
+	.content {
+		max-height: 150em;
+		overflow: hidden;
+		-webkit-transition: max-height 3s linear, opacity .3s ease-in-out, visibility .3s ease-in-out;
+		   -moz-transition: max-height 3s linear, opacity .3s ease-in-out, visibility .3s ease-in-out;
+		    -ms-transition: max-height 3s linear, opacity .3s ease-in-out, visibility .3s ease-in-out;
+		     -o-transition: max-height 3s linear, opacity .3s ease-in-out, visibility .3s ease-in-out;
+		        transition: max-height 3s linear, opacity .3s ease-in-out, visibility .3s ease-in-out;
+	}
 
-html.reloading .content {
-	max-height: 0;
-	-webkit-transition: max-height .3s linear, opacity .3s ease-in-out, visibility .3s ease-in-out;
-	   -moz-transition: max-height .3s linear, opacity .3s ease-in-out, visibility .3s ease-in-out;
-	    -ms-transition: max-height .3s linear, opacity .3s ease-in-out, visibility .3s ease-in-out;
-	     -o-transition: max-height .3s linear, opacity .3s ease-in-out, visibility .3s ease-in-out;
-	        transition: max-height .3s linear, opacity .3s ease-in-out, visibility .3s ease-in-out;
+	html.reloading .content {
+		max-height: 0;
+		-webkit-transition: max-height .3s linear, opacity .3s ease-in-out, visibility .3s ease-in-out;
+		   -moz-transition: max-height .3s linear, opacity .3s ease-in-out, visibility .3s ease-in-out;
+		    -ms-transition: max-height .3s linear, opacity .3s ease-in-out, visibility .3s ease-in-out;
+		     -o-transition: max-height .3s linear, opacity .3s ease-in-out, visibility .3s ease-in-out;
+		        transition: max-height .3s linear, opacity .3s ease-in-out, visibility .3s ease-in-out;
+	}
 }
 /*
 */
@@ -506,7 +515,8 @@ html.reloading .content {
 [data-condition="success"] [data-conditional="success"],
 [data-condition="failure"] [data-conditional="failure"] {
 	bottom: 0;
-	color: rgba(63.75,63.75,63.75,1);
+	color: #444;
+	color: rgba(68,68,68,1);
 }
 
 /* Ghost markup */
