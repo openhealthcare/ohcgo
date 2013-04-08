@@ -26,7 +26,9 @@
 
   <div class="size1of3 overflow_hidden">
     <a href="{{ object.get_absolute_url }}" title="{{ object.title }}" rel="bookmark">
+      {% if object.image %}
       <img src="{{ object.image.url }}" alt="{{ object.title }}" class="left" />
+      {% endif %}
     </a>
   </div>
 
