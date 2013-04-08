@@ -9,5 +9,6 @@ class ProductAdmin(admin.ModelAdmin):
     list_display = ('name', 'frontpage', 'featured', 'category')
     list_editable = ('frontpage', 'featured', 'category')
     list_filter = ('category',)
+    save_as = True
 
 admin.site.register(models.Product, ProductAdmin)
