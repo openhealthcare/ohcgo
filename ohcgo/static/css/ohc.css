@@ -127,9 +127,7 @@ header h1 a:hover{
 }
 
 header h1 img {
-	border: .125em solid #1d1d1b;
 	display: inline-block;
-	height: 2em;
 	vertical-align: baseline;
 }
 
