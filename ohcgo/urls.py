@@ -31,6 +31,14 @@ urlpatterns = patterns(
     url(r'^contact/ta$', TemplateView.as_view(template_name='contact_ta.html'),
         name='contact-ta'),
 
+
+    # Uncomment the admin/doc line below to enable admin documentation:
+    # url(r'^admin/doc/', nclude('django.contrib.admindocs.urls')),
+    (r'^grappelli/', include('grappelli.urls')),
+    # Uncomment the next line to enable the admin:
+    url(r'^justamin/', include(admin.site.urls)),
+
+
     # Blog
     url(r'^blog/', include('zinnia.urls')),
     url(r'^comments/', include('django.contrib.comments.urls')),
@@ -38,12 +46,6 @@ urlpatterns = patterns(
     url(r'^login/$', 'django_cas.views.login', name='login'),
     url(r'^accounts/login/$', 'django_cas.views.login'),
     url(r'^logout/$', 'django_cas.views.logout', name='logout'),
-
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', nclude('django.contrib.admindocs.urls')),
-    (r'^grappelli/', include('grappelli.urls')),
-    # Uncomment the next line to enable the admin:
-    url(r'^admin/', include(admin.site.urls)),
 )
 
 

@@ -197,7 +197,7 @@ CAS_SERVER_URL = 'http://auth.openhealthcare.org.uk'
 CAS_REDIRECT_URL = '/'
 CAS_IGNORE_REFERER = True
 CAS_AUTO_CREATE_USERS = True
-
+CAS_USE_EXTRA = True
 
 try:
     from local_settings import *
