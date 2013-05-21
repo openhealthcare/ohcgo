@@ -3,7 +3,7 @@
 				<div class="navWrap fractionGroup">
 					<div class="colophon size1of3">
 						<h1>
-							<a href="{% url home %}">
+							<a href="{% url 'home' %}">
 								<img alt src="/inc/img/logo.orig.png"/>
 							</a>
 						</h1>
@@ -14,16 +14,16 @@
 						lookup on the routes in urls.py on
 						the name keyword
 					-->
-						<a href="{% url about %}">
+						<a href="{% url 'about' %}">
 							About
 						</a>
-						<a href="{% url products %}">
+						<a href="{% url 'products' %}">
 							Tools
 						</a>
-						<a href="{% url hackdays %}">
+						<a href="{% url 'hackdays' %}">
 							Hack Days
 						</a>
-						<a href="{% url consultancy %}">
+						<a href="{% url 'consultancy' %}">
 							Consultancy
 						</a>
 						<a href="/blog">
