@@ -358,8 +358,9 @@ body article .person p {
 	background: #fae3b1;
 	background: rgba(244,177,25,.33);
 	margin: 0 0 1em;
-	padding: 1em;
+	padding: 3em;
 }
+
 
 /* Contact form */
 
@@ -569,6 +570,10 @@ textarea,
 
 
 /* Blogging */
+
+#blogPreview {
+    margin-top: 3em;
+}
 
 .blog h2 {
     font-size: 1.8em;
