@@ -584,3 +584,9 @@ div.blog p {
 .entry-widgets {
     display: none;
 }
+
+
+/* Utility */
+.inline-block {
+    display: inline-block;
+}

@@ -30,12 +30,13 @@
 			{% for tool in products %}
 			<article>
 				<h3>
+                                  <img src="{{STATIC_URL}}{{tool.image_location}}" class="inline-block" alt="" height="80" width="80"/>
 					<a href="{{tool.get_absolute_url}}">
 						{{tool.name}}
 					</a>
 				</h3>
 				<p>
-					{{tool.description|markdown}}
+					{{tool.description|markdown|truncatewords:30}}
 				</p>
 			</article>
 			{% endfor %}
